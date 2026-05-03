@@ -273,20 +273,20 @@ button,input,select{font-family:'Manrope',sans-serif}
 .ztable-wrap{
   border:1px solid var(--zline);border-radius:var(--r3);
   background:linear-gradient(180deg,rgba(9,16,40,.95),rgba(4,8,20,.98));
-  overflow:hidden;
+  overflow-x:auto;overflow-y:hidden;
   box-shadow:0 24px 80px rgba(0,0,0,.30),inset 0 1px 0 rgba(255,255,255,.04);
-  margin-top:14px;
+  margin-top:10px;
 }
 .ztable{display:grid}
 .zrow{
   display:grid;
-  grid-template-columns:92px minmax(260px,3fr) minmax(150px,1fr) minmax(165px,1.05fr) minmax(158px,1fr) minmax(165px,1.05fr) 108px;
-  gap:0;align-items:stretch;min-height:68px;padding:0 20px;
+  grid-template-columns:60px minmax(0,1.8fr) minmax(0,1.1fr) minmax(0,1.2fr) minmax(0,1.2fr) minmax(0,1.1fr) 72px;
+  gap:0;align-items:stretch;min-height:68px;padding:0 12px;
   border-bottom:1px solid var(--zline2);
   transition:background .16s var(--easio);contain:layout style;
 }
 .zrow.zrs{
-  grid-template-columns:92px minmax(280px,3fr) minmax(185px,1.1fr) minmax(200px,1.15fr) 108px;
+  grid-template-columns:60px minmax(0,1.8fr) minmax(0,1.2fr) minmax(0,1.4fr) 72px;
   align-items:stretch;contain:layout style;
 }
 .zrow:not(.zrh):hover{background:linear-gradient(90deg,rgba(90,140,255,.08),rgba(90,140,255,.02))}
@@ -359,13 +359,19 @@ button,input,select{font-family:'Manrope',sans-serif}
 .zhide{display:none!important}
 
 /* ===== RESPONSIVE ===== */
+@media(max-width:1200px){
+  .zh-hero{grid-template-columns:1fr;padding:16px 20px}
+  .zh-stats{flex-direction:row;flex-wrap:wrap;align-items:flex-start;gap:8px}
+  .zbadge{min-width:unset}
+  .zpod-wrap{grid-template-columns:1fr 1.08fr 1fr}
+  .zpod.zp1{min-height:144px!important}
+  .zt{font-size:44px}
+}
 @media(max-width:1100px){
-  .zh-hero{grid-template-columns:1fr}
-  .zh-stats{flex-direction:row;flex-wrap:wrap;align-items:flex-start}
   .zpod-wrap{grid-template-columns:1fr}
-  .zpod.zp1{order:-1;min-height:180px}
+  .zpod.zp1{order:-1;min-height:130px!important}
   .zpod:hover,.zpod.zp1:hover{transform:none}
-  .znav{width:100%;display:grid;grid-template-columns:1fr 1fr}
+  .znav{width:100%;display:grid;grid-template-columns:1fr 1fr 1fr!important}
   .ztab{justify-content:center}
 }
 @media(max-width:760px){
@@ -477,27 +483,28 @@ button,input,select{font-family:'Manrope',sans-serif}
   width:36px!important;
 }
 
+/* === TABLA: columnas 100% flexibles, sin mínimos fijos que causen overflow === */
 .zrow{
   grid-template-columns:
-    78px
-    minmax(170px,.82fr)
-    minmax(230px,1.25fr)
-    minmax(260px,1.42fr)
-    minmax(270px,1.50fr)
-    minmax(245px,1.35fr)
-    92px!important;
-  min-height:74px!important;
-  padding:0 16px!important;
+    60px
+    minmax(0,1.8fr)
+    minmax(0,1.1fr)
+    minmax(0,1.2fr)
+    minmax(0,1.2fr)
+    minmax(0,1.1fr)
+    72px!important;
+  min-height:68px!important;
+  padding:0 12px!important;
 }
 
 .zrow.zrs{
   grid-template-columns:
-    78px
-    minmax(170px,.82fr)
-    minmax(270px,1.35fr)
-    minmax(330px,1.65fr)
-    92px!important;
-  min-height:74px!important;
+    60px
+    minmax(0,1.8fr)
+    minmax(0,1.2fr)
+    minmax(0,1.4fr)
+    72px!important;
+  min-height:68px!important;
 }
 
 .zrow.zrh{
@@ -586,13 +593,13 @@ button,input,select{font-family:'Manrope',sans-serif}
 /* MVP'S S8 TAB */
 .zrow.zmvp{
   grid-template-columns:
-    78px
-    minmax(170px,.82fr)
-    minmax(330px,1.55fr)
-    minmax(220px,1.05fr)
-    minmax(220px,1.05fr)
-    92px!important;
-  min-height:74px!important;
+    60px
+    minmax(0,1.8fr)
+    minmax(0,1.5fr)
+    minmax(0,1fr)
+    minmax(0,1fr)
+    72px!important;
+  min-height:68px!important;
 }
 @media(max-width:1100px){
   .znav{grid-template-columns:1fr 1fr 1fr!important}
