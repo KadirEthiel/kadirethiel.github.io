@@ -23,6 +23,10 @@
 --ease:cubic-bezier(.22,.68,0,1.2);--easio:cubic-bezier(.4,0,.2,1);
 --r1:12px;--r2:18px;--r3:26px;--r4:40px;
 }
+
+/* ✅ FIX 1: overflow-x:hidden en html para que el body::after no genere scroll horizontal */
+html{overflow-x:hidden}
+
 html,body{min-height:100%;font-family:'Manrope',sans-serif;color:var(--text);background:var(--z0);-webkit-font-smoothing:antialiased}
 body{
   padding:20px;
@@ -131,15 +135,30 @@ button,input,select{font-family:'Manrope',sans-serif}
 }
 .ztab.zact .ztab-ico{opacity:1}
 
+/* ✅ FIX 2: .zctrl ahora es una sola columna — search arriba, chips abajo.
+   Así los chips tienen TODO el ancho disponible y nunca se cortan. */
 .zctrl{
-  display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start;
+  display:grid;
+  grid-template-columns:1fr;   /* ← era "1fr auto", causaba overflow */
+  gap:10px;
   padding:16px;
   background:linear-gradient(180deg,rgba(8,14,36,.82),rgba(4,8,20,.75));
   border:1px solid var(--zline);border-radius:var(--r2);
   box-shadow:0 16px 60px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.035);
   backdrop-filter:blur(8px);
 }
+
+/* Row interno: search + chips en la misma fila cuando hay espacio suficiente */
+.zctrl-row{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
 .zinput{
+  flex:1 1 240px;          /* crece pero no rompe el layout */
+  min-width:0;
   height:50px;padding:0 18px 0 50px;
   border:1px solid var(--zline);border-radius:var(--r1);
   background:url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='%235b7fff' stroke-width='2' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E") 16px center/18px 18px no-repeat,rgba(3,7,20,.75);
@@ -150,7 +169,14 @@ button,input,select{font-family:'Manrope',sans-serif}
 .zinput::placeholder{color:var(--muted2)}
 .zinput:focus{border-color:rgba(90,140,255,.6);box-shadow:0 0 0 3px rgba(90,140,255,.12)}
 
-.zfchips{display:flex;flex-wrap:wrap;gap:8px;padding:4px 2px}
+/* ✅ FIX 3: chips en su propia fila, wrappean libremente */
+.zfchips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  padding:2px 0;
+}
+
 .zfchip{
   display:inline-flex;align-items:center;gap:8px;
   height:42px;padding:0 16px;
@@ -178,9 +204,15 @@ button,input,select{font-family:'Manrope',sans-serif}
 .zfchip-dot{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.7;flex-shrink:0}
 .zfchip.zfact .zfchip-dot{opacity:1;background:var(--zt0);box-shadow:0 0 8px var(--zt0)}
 
+/* ✅ FIX 4: podium con min-width:0 para que las columnas no desborden */
 .zpod-wrap{
-  display:grid;grid-template-columns:1fr 1.06fr 1fr;gap:14px;align-items:end;
+  display:grid;
+  grid-template-columns:1fr 1.06fr 1fr;
+  gap:14px;
+  align-items:end;
+  min-width:0;   /* ← previene que el grid expanda más allá del contenedor */
 }
+
 .zpod{
   position:relative;overflow:visible;
   border:1px solid var(--zline);border-radius:var(--r3);padding:24px 20px 20px;
@@ -190,6 +222,7 @@ button,input,select{font-family:'Manrope',sans-serif}
   display:grid;grid-template-rows:auto auto 1fr auto;gap:8px;min-height:180px;
   box-shadow:0 16px 60px rgba(0,0,0,.24);
   transition:transform .28s var(--ease),box-shadow .28s var(--easio),border-color .22s;
+  min-width:0;  /* ← cada celda del grid tampoco desborda */
 }
 .zpod::before{
   content:"";position:absolute;inset:0;border-radius:var(--r3);
@@ -234,7 +267,7 @@ button,input,select{font-family:'Manrope',sans-serif}
 .zplbl{font:700 10px 'Space Mono',monospace;letter-spacing:1.5px;color:var(--muted);margin-top:3px}
 .zpod.zp1 .zplbl{color:rgba(255,213,56,.7)}
 .zpod.zp3 .zplbl{color:rgba(165,125,255,.7)}
-.zpname{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.zpname{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 .zppills{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;align-self:end}
 
 .ztable-wrap{
@@ -325,6 +358,7 @@ button,input,select{font-family:'Manrope',sans-serif}
 @keyframes zviewin{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 .zhide{display:none!important}
 
+/* ===== RESPONSIVE ===== */
 @media(max-width:1100px){
   .zh-hero{grid-template-columns:1fr}
   .zh-stats{flex-direction:row;flex-wrap:wrap;align-items:flex-start}
@@ -337,7 +371,6 @@ button,input,select{font-family:'Manrope',sans-serif}
 @media(max-width:760px){
   body{padding:12px}
   .zt{font-size:56px}
-  .zctrl{grid-template-columns:1fr}
   .zrow,.zrow.zrs{grid-template-columns:64px 1.8fr 82px!important;min-height:74px}
   .zrow>span:nth-child(3),.zrow>span:nth-child(4),.zrow>span:nth-child(5),.zrow>span:nth-child(6){display:none}
   .zrow>span{border-right:0!important}
@@ -352,7 +385,6 @@ button,input,select{font-family:'Manrope',sans-serif}
    FINAL LAYOUT TUNE - TABLE + PODIUM
    =============================== */
 
-/* Numbers: cleaner, less stretched */
 .zpnum,
 .zrtotal,
 .zbval,
@@ -363,7 +395,6 @@ button,input,select{font-family:'Manrope',sans-serif}
   letter-spacing:.2px!important;
 }
 
-/* Player names: less stretched and easier to read */
 .zpname,
 .zrplayer b{
   font-family:'Manrope',sans-serif!important;
@@ -371,7 +402,6 @@ button,input,select{font-family:'Manrope',sans-serif}
   font-stretch:normal!important;
 }
 
-/* Podium: remove empty feeling and center content better */
 .zpod{
   min-height:156px!important;
   padding:20px 22px 18px!important;
@@ -447,7 +477,6 @@ button,input,select{font-family:'Manrope',sans-serif}
   width:46px!important;
 }
 
-/* Table: player column smaller, achievements columns larger */
 .zrow{
   grid-template-columns:
     78px
@@ -501,7 +530,6 @@ button,input,select{font-family:'Manrope',sans-serif}
   word-break:normal!important;
 }
 
-/* Achievement cells: more room, compact pills */
 .zrcell{
   padding:8px 10px!important;
   gap:6px!important;
@@ -532,7 +560,6 @@ button,input,select{font-family:'Manrope',sans-serif}
   font-size:30px!important;
 }
 
-/* Keep the vertical dividers visible but cleaner */
 .zrow>span:not(:last-child){
   border-right:1px solid rgba(120,160,255,.135)!important;
 }
@@ -541,7 +568,6 @@ button,input,select{font-family:'Manrope',sans-serif}
   border-right:1px solid rgba(120,160,255,.09)!important;
 }
 
-/* Mobile keeps compact structure */
 @media(max-width:760px){
   .zpod{
     grid-template-columns:54px minmax(0,1fr) auto!important;
@@ -629,6 +655,7 @@ button,input,select{font-family:'Manrope',sans-serif}
   </button>
 </nav>
 
+<!-- ✅ FIX: search y chips ahora en columna única, chips tienen fila propia -->
 <section class="zctrl">
   <input class="zinput" id="zsearch" placeholder="Search player or achievement…"/>
   <div class="zfchips" id="zfilters">
@@ -665,7 +692,7 @@ button,input,select{font-family:'Manrope',sans-serif}
   </section>
 </div>
 
-<footer class="zfooter">Made by Zenoir · MLV Rankings · 2026</footer>
+<footer class="zfooter">Made by Zenoir and Fuas · MLV Rankings · 2026</footer>
 </div>
 <script>
 const ZAPI="https://script.google.com/macros/s/AKfycbz_IrXjXg_yRuDmIDQCsGSvnq3I827Cx4d-PtL-uZ0D0dx--KYtKCpkeoy0BHrNYpto/exec";
