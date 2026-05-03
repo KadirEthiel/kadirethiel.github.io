@@ -29,7 +29,7 @@ html{overflow-x:hidden}
 
 html,body{min-height:100%;font-family:'Manrope',sans-serif;color:var(--text);background:var(--z0);-webkit-font-smoothing:antialiased}
 body{
-  padding:20px;
+  padding:12px;
   background:
     radial-gradient(ellipse 80% 60% at 10% -10%,rgba(58,92,240,.28),transparent),
     radial-gradient(ellipse 60% 50% at 95% 5%,rgba(123,79,255,.22),transparent),
@@ -64,7 +64,7 @@ body::after{
 
 button,input,select{font-family:'Manrope',sans-serif}
 
-.zs{position:relative;z-index:1;max-width:1600px;margin:0 auto;display:grid;gap:16px}
+.zs{position:relative;z-index:1;max-width:1600px;margin:0 auto;display:grid;gap:10px}
 
 .zh-hero{
   position:relative;overflow:hidden;
@@ -74,8 +74,8 @@ button,input,select{font-family:'Manrope',sans-serif}
     radial-gradient(ellipse 40% 60% at 8% 80%,rgba(0,232,200,.10),transparent),
     linear-gradient(135deg,rgba(10,18,46,.97),rgba(5,8,22,.98));
   box-shadow:0 28px 100px rgba(0,0,0,.50),inset 0 1px 0 rgba(255,255,255,.05);
-  padding:28px 32px;
-  display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;
+  padding:18px 24px;
+  display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;
 }
 .zh-deco{
   position:absolute;right:-60px;top:-120px;width:420px;height:420px;border-radius:50%;
@@ -89,7 +89,7 @@ button,input,select{font-family:'Manrope',sans-serif}
   text-transform:uppercase;margin-bottom:10px;text-shadow:0 0 20px rgba(0,232,200,.5);
 }
 .zk::before{content:"";width:28px;height:2px;background:linear-gradient(90deg,var(--zt0),transparent);border-radius:2px}
-.zt{font-family:'Syne',sans-serif;font-size:80px;line-height:.88;letter-spacing:-1px;margin-bottom:14px}
+.zt{font-family:'Syne',sans-serif;font-size:52px;line-height:.92;letter-spacing:-1px;margin-bottom:10px}
 .zt span{
   background:linear-gradient(110deg,#fff 0%,#c2d8ff 30%,var(--z7) 60%,var(--zc6) 85%,var(--zm0) 100%);
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
@@ -100,9 +100,9 @@ button,input,select{font-family:'Manrope',sans-serif}
 .zbadge{
   display:inline-flex;align-items:center;gap:10px;
   border:1px solid var(--zn2);background:linear-gradient(135deg,rgba(12,22,52,.85),rgba(6,10,24,.90));
-  border-radius:var(--r2);padding:12px 18px;
-  font:700 12px 'Space Mono',monospace;letter-spacing:1px;color:var(--z8);
-  white-space:nowrap;min-width:160px;
+  border-radius:var(--r2);padding:8px 14px;
+  font:700 11px 'Space Mono',monospace;letter-spacing:1px;color:var(--z8);
+  white-space:nowrap;min-width:130px;
   box-shadow:0 8px 32px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.04);
   transition:border-color .2s,box-shadow .2s;
 }
@@ -111,7 +111,7 @@ button,input,select{font-family:'Manrope',sans-serif}
 .zbadge.zlive{color:var(--zt0);border-color:rgba(0,232,200,.28)}
 .zbadge.zerr .zbdot{background:var(--zr0);box-shadow:0 0 8px var(--zr0)}
 .zbadge.zerr{color:var(--zr0);border-color:rgba(255,51,85,.28)}
-.zbval{font-size:20px;font-family:'Syne',sans-serif;color:var(--zb);line-height:1}
+.zbval{font-size:16px;font-family:'Syne',sans-serif;color:var(--zb);line-height:1}
 @keyframes zpulse{50%{transform:scale(1.5);opacity:.5}}
 
 .znav{
@@ -120,9 +120,9 @@ button,input,select{font-family:'Manrope',sans-serif}
   padding:6px;width:max-content;backdrop-filter:blur(10px);
 }
 .ztab{
-  display:flex;align-items:center;gap:10px;height:50px;padding:0 24px;
+  display:flex;align-items:center;gap:8px;height:40px;padding:0 18px;
   border-radius:var(--r1);border:1px solid transparent;background:transparent;
-  color:var(--muted);font:700 13px 'Manrope',sans-serif;letter-spacing:.3px;
+  color:var(--muted);font:700 12px 'Manrope',sans-serif;letter-spacing:.3px;
   cursor:pointer;transition:all .22s var(--easio);white-space:nowrap;
 }
 .ztab-ico{width:18px;height:18px;opacity:.7;transition:opacity .2s}
@@ -139,9 +139,9 @@ button,input,select{font-family:'Manrope',sans-serif}
    Así los chips tienen TODO el ancho disponible y nunca se cortan. */
 .zctrl{
   display:grid;
-  grid-template-columns:1fr;   /* ← era "1fr auto", causaba overflow */
-  gap:10px;
-  padding:16px;
+  grid-template-columns:1fr;
+  gap:8px;
+  padding:12px;
   background:linear-gradient(180deg,rgba(8,14,36,.82),rgba(4,8,20,.75));
   border:1px solid var(--zline);border-radius:var(--r2);
   box-shadow:0 16px 60px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.035);
@@ -157,12 +157,12 @@ button,input,select{font-family:'Manrope',sans-serif}
 }
 
 .zinput{
-  flex:1 1 240px;          /* crece pero no rompe el layout */
+  flex:1 1 240px;
   min-width:0;
-  height:50px;padding:0 18px 0 50px;
+  height:40px;padding:0 14px 0 42px;
   border:1px solid var(--zline);border-radius:var(--r1);
-  background:url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='%235b7fff' stroke-width='2' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E") 16px center/18px 18px no-repeat,rgba(3,7,20,.75);
-  color:var(--text);font-weight:700;font-size:14px;outline:none;
+  background:url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='%235b7fff' stroke-width='2' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E") 14px center/16px 16px no-repeat,rgba(3,7,20,.75);
+  color:var(--text);font-weight:700;font-size:13px;outline:none;
   transition:border-color .18s,box-shadow .18s;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
 }
@@ -178,13 +178,13 @@ button,input,select{font-family:'Manrope',sans-serif}
 }
 
 .zfchip{
-  display:inline-flex;align-items:center;gap:8px;
-  height:42px;padding:0 16px;
+  display:inline-flex;align-items:center;gap:6px;
+  height:34px;padding:0 12px;
   border-radius:999px;
   border:1px solid rgba(90,140,255,.22);
   background:rgba(3,7,20,.75);
   color:var(--muted);
-  font:700 12px 'Space Mono',monospace;letter-spacing:.8px;text-transform:uppercase;
+  font:700 11px 'Space Mono',monospace;letter-spacing:.6px;text-transform:uppercase;
   cursor:pointer;transition:all .2s var(--easio);white-space:nowrap;
   position:relative;overflow:hidden;
 }
@@ -281,7 +281,7 @@ button,input,select{font-family:'Manrope',sans-serif}
 .zrow{
   display:grid;
   grid-template-columns:92px minmax(260px,3fr) minmax(150px,1fr) minmax(165px,1.05fr) minmax(158px,1fr) minmax(165px,1.05fr) 108px;
-  gap:0;align-items:stretch;min-height:88px;padding:0 20px;
+  gap:0;align-items:stretch;min-height:68px;padding:0 20px;
   border-bottom:1px solid var(--zline2);
   transition:background .16s var(--easio);contain:layout style;
 }
@@ -403,17 +403,17 @@ button,input,select{font-family:'Manrope',sans-serif}
 }
 
 .zpod{
-  min-height:156px!important;
-  padding:20px 22px 18px!important;
+  min-height:130px!important;
+  padding:16px 18px 14px!important;
   display:grid!important;
-  grid-template-columns:72px minmax(0,1fr) auto!important;
+  grid-template-columns:60px minmax(0,1fr) auto!important;
   grid-template-rows:auto 1fr auto!important;
-  gap:8px 14px!important;
+  gap:6px 12px!important;
   align-items:center!important;
 }
 
 .zpod.zp1{
-  min-height:168px!important;
+  min-height:144px!important;
 }
 
 .zpod-rank{
@@ -437,7 +437,7 @@ button,input,select{font-family:'Manrope',sans-serif}
   align-self:center!important;
   justify-self:start!important;
   max-width:100%!important;
-  font-size:25px!important;
+  font-size:20px!important;
   line-height:1.08!important;
   white-space:nowrap!important;
   overflow:hidden!important;
@@ -445,7 +445,7 @@ button,input,select{font-family:'Manrope',sans-serif}
 }
 
 .zpnum{
-  font-size:46px!important;
+  font-size:36px!important;
   line-height:.88!important;
 }
 
@@ -455,26 +455,26 @@ button,input,select{font-family:'Manrope',sans-serif}
 }
 
 .zrhex{
-  width:54px!important;
-  height:54px!important;
+  width:44px!important;
+  height:44px!important;
 }
 
 .zppills{
   grid-column:1 / -1!important;
   grid-row:3!important;
-  margin-top:4px!important;
+  margin-top:2px!important;
   align-self:end!important;
   justify-content:flex-start!important;
-  max-height:62px!important;
+  max-height:54px!important;
   overflow:visible!important;
 }
 
 .zcrown-wrap{
-  top:-18px!important;
+  top:-14px!important;
 }
 
 .zcrown-svg{
-  width:46px!important;
+  width:36px!important;
 }
 
 .zrow{
@@ -501,16 +501,16 @@ button,input,select{font-family:'Manrope',sans-serif}
 }
 
 .zrow.zrh{
-  min-height:48px!important;
+  min-height:40px!important;
 }
 
 .zrow>span{
-  padding:8px 12px!important;
+  padding:6px 10px!important;
 }
 
 .zrrank svg{
-  width:48px!important;
-  height:48px!important;
+  width:40px!important;
+  height:40px!important;
 }
 
 .zrplayer{
@@ -692,7 +692,7 @@ button,input,select{font-family:'Manrope',sans-serif}
   </section>
 </div>
 
-<footer class="zfooter">Made by Zenoir and Fuas · MLV Rankings · 2026</footer>
+<footer class="zfooter">Made by Zenoir · MLV Rankings · 2026</footer>
 </div>
 <script>
 const ZAPI="https://script.google.com/macros/s/AKfycbz_IrXjXg_yRuDmIDQCsGSvnq3I827Cx4d-PtL-uZ0D0dx--KYtKCpkeoy0BHrNYpto/exec";
