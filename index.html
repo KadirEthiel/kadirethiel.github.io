@@ -24,7 +24,6 @@
 --r1:12px;--r2:18px;--r3:26px;--r4:40px;
 }
 
-/* ✅ FIX 1: overflow-x:hidden en html para que el body::after no genere scroll horizontal */
 html{overflow-x:hidden}
 
 html,body{min-height:100%;font-family:'Manrope',sans-serif;color:var(--text);background:var(--z0);-webkit-font-smoothing:antialiased}
@@ -135,8 +134,6 @@ button,input,select{font-family:'Manrope',sans-serif}
 }
 .ztab.zact .ztab-ico{opacity:1}
 
-/* ✅ FIX 2: .zctrl ahora es una sola columna — search arriba, chips abajo.
-   Así los chips tienen TODO el ancho disponible y nunca se cortan. */
 .zctrl{
   display:grid;
   grid-template-columns:1fr;
@@ -148,7 +145,6 @@ button,input,select{font-family:'Manrope',sans-serif}
   backdrop-filter:blur(8px);
 }
 
-/* Row interno: search + chips en la misma fila cuando hay espacio suficiente */
 .zctrl-row{
   display:flex;
   gap:12px;
@@ -169,7 +165,6 @@ button,input,select{font-family:'Manrope',sans-serif}
 .zinput::placeholder{color:var(--muted2)}
 .zinput:focus{border-color:rgba(90,140,255,.6);box-shadow:0 0 0 3px rgba(90,140,255,.12)}
 
-/* ✅ FIX 3: chips en su propia fila, wrappean libremente */
 .zfchips{
   display:flex;
   flex-wrap:wrap;
@@ -204,13 +199,12 @@ button,input,select{font-family:'Manrope',sans-serif}
 .zfchip-dot{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.7;flex-shrink:0}
 .zfchip.zfact .zfchip-dot{opacity:1;background:var(--zt0);box-shadow:0 0 8px var(--zt0)}
 
-/* ✅ FIX 4: podium con min-width:0 para que las columnas no desborden */
 .zpod-wrap{
   display:grid;
   grid-template-columns:1fr 1.06fr 1fr;
   gap:14px;
   align-items:end;
-  min-width:0;   /* ← previene que el grid expanda más allá del contenedor */
+  min-width:0;
 }
 
 .zpod{
@@ -222,7 +216,7 @@ button,input,select{font-family:'Manrope',sans-serif}
   display:grid;grid-template-rows:auto auto 1fr auto;gap:8px;min-height:180px;
   box-shadow:0 16px 60px rgba(0,0,0,.24);
   transition:transform .28s var(--ease),box-shadow .28s var(--easio),border-color .22s;
-  min-width:0;  /* ← cada celda del grid tampoco desborda */
+  min-width:0;
 }
 .zpod::before{
   content:"";position:absolute;inset:0;border-radius:var(--r3);
@@ -318,6 +312,19 @@ button,input,select{font-family:'Manrope',sans-serif}
 .zrow:nth-child(4) .zrtotal{color:var(--zc7)}
 .zempty,.zloading{padding:44px;text-align:center;color:var(--muted);font:700 13px 'Space Mono',monospace;letter-spacing:.5px}
 
+/* Team tag below player name */
+.zrteam{
+  font:700 10px 'Space Mono',monospace;
+  letter-spacing:.5px;
+  color:var(--muted);
+  margin-top:3px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  max-width:100%;
+  opacity:.8;
+}
+
 .zpill{
   --pc1:var(--z7);--pc2:var(--z6);--pfg:var(--za);--prim:rgba(90,140,255,.28);
   display:inline-flex;flex-direction:row;align-items:center;justify-content:center;gap:4px;
@@ -345,6 +352,13 @@ button,input,select{font-family:'Manrope',sans-serif}
 .zpill.zpallstar{--pc1:#c58a5a;--pc2:#7a431f;--pfg:#ffe8d0;--prim:rgba(122,67,31,.32)}
 .zpill.zpfinalmvp{--pc1:#ffffff;--pc2:#b7c7e8;--pfg:#ffffff;--prim:rgba(200,220,255,.35)}
 .zpill.zpsemifinalmvp{--pc1:#d6c4ff;--pc2:#8b5cf6;--pfg:#f0eaff;--prim:rgba(139,92,246,.30)}
+/* MOP / MDP / MVP pills */
+.zpill.zpmop{--pc1:#ff9f5a;--pc2:#ff6a00;--pfg:#fff0e0;--prim:rgba(255,106,0,.30)}
+.zpill.zpmdp{--pc1:#5af0ff;--pc2:#00b8d9;--pfg:#e0fbff;--prim:rgba(0,184,217,.30)}
+.zpill.zpmvp{--pc1:#fff29a;--pc2:#ffb800;--pfg:#fff7c7;--prim:rgba(255,184,0,.35)}
+/* POTW pill */
+.zpill.zppotw{--pc1:#ff9fd8;--pc2:#ff5db4;--pfg:#ffd8f4;--prim:rgba(255,93,180,.30)}
+
 .zqty{display:inline;font:800 11.5px 'Space Mono',monospace;letter-spacing:.2px;line-height:1;vertical-align:middle}
 .zqty.zq1{background:linear-gradient(180deg,#fff,#cbd7e8 55%,#8898ad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 6px rgba(200,215,235,.5))}
 .zqty.zq2{background:linear-gradient(180deg,#fff8ad,#ffe13b 55%,#c89600);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 8px rgba(255,225,59,.4))}
@@ -483,7 +497,6 @@ button,input,select{font-family:'Manrope',sans-serif}
   width:36px!important;
 }
 
-/* === TABLA: columnas 100% flexibles, sin mínimos fijos que causen overflow === */
 .zrow{
   grid-template-columns:
     60px
@@ -590,17 +603,22 @@ button,input,select{font-family:'Manrope',sans-serif}
 }
 
 
-/* MVP'S S8 TAB */
+/* ===========================
+   MVP'S S8 TAB — 7 columnas
+   Rank | Player+Team | Top 1 | Top +5 | POTW | MVPs | Points
+   =========================== */
 .zrow.zmvp{
   grid-template-columns:
     60px
     minmax(0,1.8fr)
-    minmax(0,1.5fr)
-    minmax(0,1fr)
-    minmax(0,1fr)
+    minmax(0,0.9fr)
+    minmax(0,1.1fr)
+    minmax(0,0.9fr)
+    minmax(0,1.2fr)
     72px!important;
   min-height:68px!important;
 }
+
 @media(max-width:1100px){
   .znav{grid-template-columns:1fr 1fr 1fr!important}
 }
@@ -612,9 +630,9 @@ button,input,select{font-family:'Manrope',sans-serif}
   }
   .zrow.zmvp>span:nth-child(3),
   .zrow.zmvp>span:nth-child(4),
-  .zrow.zmvp>span:nth-child(5){display:none}
+  .zrow.zmvp>span:nth-child(5),
+  .zrow.zmvp>span:nth-child(6){display:none}
 }
-
 </style>
 </head>
 <body>
@@ -662,7 +680,6 @@ button,input,select{font-family:'Manrope',sans-serif}
   </button>
 </nav>
 
-<!-- ✅ FIX: search y chips ahora en columna única, chips tienen fila propia -->
 <section class="zctrl">
   <input class="zinput" id="zsearch" placeholder="Search player or achievement…"/>
   <div class="zfchips" id="zfilters">
@@ -742,22 +759,26 @@ function ZnormSeas(r){
     points:Number(Zkey(r,["points","Points","POINTS","Total","TOTAL","Pts","PTS"])||0)||0
   };
 }
+
+// ─── SEASON 8 normalizer — mapea los campos que ahora manda el doGet ───
 function ZnormMvpS8(r){
   return{
-    name:Zcl(Zkey(r,["name","player","players","Player","Players","PLAYER","PLAYERS","Jogador","JOGADOR"])),
-    handle:Zcl(Zkey(r,["handle","user","discord","Handle","@","Discord","User"])),
-    mvps:Zcl(Zkey(r,["mvps","MVPs","MVPS","mvp","MVP","awards","Awards","award","Award"])),
-    role:Zcl(Zkey(r,["role","Role","position","Position","cargo","Cargo"])),
-    team:Zcl(Zkey(r,["team","Team","time","Time"])),
-    points:Number(Zkey(r,["points","Points","POINTS","Total","TOTAL","Pts","PTS"])||0)||0
+    name:   Zcl(Zkey(r,["name","player","players","Player","Players","PLAYER","PLAYERS"])),
+    team:   Zcl(Zkey(r,["team","Team","TEAM"])),
+    top1:   Zcl(Zkey(r,["top1","TOP1","Top 1","top 1","TOP 1"])),
+    top5:   Zcl(Zkey(r,["top5","TOP5","Top 5","top 5","TOP 5","top+5","TOP+5"])),
+    potw:   Zcl(Zkey(r,["potw","POTW","Player of the Week","PLAYER OF THE WEEK"])),
+    mvps:   Zcl(Zkey(r,["mvps","MVPs","MVPS","mvp","MVP","awards","Awards"])),
+    points: Number(Zkey(r,["points","Points","POINTS","Total","TOTAL","Pts","PTS"])||0)||0
   };
 }
+
 function ZreadPayload(raw){
   if(Array.isArray(raw))return{hall:raw,seasonal:[]};
   return{
     hall:raw.rankings||raw.hall||raw.hof||raw.players||raw.rows||raw.data||[],
     seasonal:raw.seasonalRankings||raw.seasonal||[],
-    mvps8:raw.mvpsS8||raw.mvpS8||raw.mvps8||raw.mvp8||raw["Season 8"]||raw["Season 8"]||raw.s8Mvps||raw.s8MVPs||[]
+    mvps8:raw.mvpsS8||raw.mvpS8||raw.mvps8||raw.mvp8||raw["Season 8"]||raw.s8Mvps||raw.s8MVPs||[]
   };
 }
 
@@ -814,14 +835,24 @@ function ZqtyClass(txt){
   const m=Zcl(txt).match(/(\d+)/);if(!m)return"";
   const n=+m[1];if(n>=10)return"zq4";if(n>=5)return"zq3";if(n>=3)return"zq2";if(n>=1)return"zq1";return"";
 }
+
+// Detecta tipo de pill para colorearla
 function ZachClass(txt){
   const t=Zcl(txt).toLowerCase();const c=[];
+  // MOP / MDP / MVP
+  if(/\bmop\b/i.test(txt))c.push("zpmop");
+  else if(/\bmdp\b/i.test(txt))c.push("zpmdp");
+  else if(/\bmvp\b/i.test(txt))c.push("zpmvp");
+  // POTW
+  else if(/\bpotw\b/i.test(txt)||t.includes("player of the week"))c.push("zppotw");
+  // Seasons
   if(/\bs1\b/i.test(txt))c.push("zps1");
   else if(/\bs2\b/i.test(txt))c.push("zps2");
   else if(/\bs3\b/i.test(txt))c.push("zps3");
   else if(/\bs4\b/i.test(txt))c.push("zps4");
   else if(/\bs5\b/i.test(txt))c.push("zps5");
   else if(/\bs6\b/i.test(txt))c.push("zps6");
+  // Otros
   if(t.includes("league mvp"))c.push("zpleaguemvp");
   else if(t.includes("final mvp"))c.push("zpfinalmvp");
   else if(t.includes("semifinal mvp"))c.push("zpsemifinalmvp");
@@ -956,18 +987,37 @@ function ZrenderSeas(){
     </div>`).join("");
 }
 
+// ─── SEASON 8 render — 7 columnas: Rank | Player+Team | Top 1 | Top +5 | POTW | MVPs | Points ───
 function ZrenderMvps8(){
   const rows=ZfiltMvps8();
-  const head=`<div class="zrow zmvp zrh"><span>Rank</span><span>Player</span><span>Season 8</span><span>Role</span><span>Team</span><span>Points</span></div>`;
-  if(!ZMVPS8.length){Z$("zmvps8Table").innerHTML='<div class="zempty">No MVP\'s S8 data found. Apps Script must return mvpsS8 separately.</div>';return}
-  if(!rows.length){Z$("zmvps8Table").innerHTML=head+'<div class="zempty">No players match your search.</div>';return}
+  const head=`<div class="zrow zmvp zrh">
+    <span>Rank</span>
+    <span>Player</span>
+    <span>Top 1</span>
+    <span>Top +5</span>
+    <span>POTW</span>
+    <span>MVPs</span>
+    <span>Points</span>
+  </div>`;
+  if(!ZMVPS8.length){
+    Z$("zmvps8Table").innerHTML='<div class="zempty">No Season 8 data found. Make sure the Apps Script returns the updated fields.</div>';
+    return;
+  }
+  if(!rows.length){
+    Z$("zmvps8Table").innerHTML=head+'<div class="zempty">No players match your search.</div>';
+    return;
+  }
   Z$("zmvps8Table").innerHTML=head+rows.map((p,i)=>`
     <div class="zrow zmvp">
       <span class="zrrank">${ZrowHex(i+1)}</span>
-      <span class="zrplayer"><b>${Zesc(p.name)}</b></span>
-      <span class="zrcell">${ZpillsHTML(p.mvps)}</span>
-      <span class="zrcell">${ZpillsHTML(p.role)}</span>
-      <span class="zrcell">${ZpillsHTML(p.team)}</span>
+      <span class="zrplayer">
+        <b>${Zesc(p.name)}</b>
+        ${p.team?`<span class="zrteam">${Zesc(p.team)}</span>`:""}
+      </span>
+      <span class="zrcell">${p.top1?ZpillsHTML(p.top1):'<span class="zpill znil">—</span>'}</span>
+      <span class="zrcell">${p.top5?ZpillsHTML(p.top5):'<span class="zpill znil">—</span>'}</span>
+      <span class="zrcell">${p.potw?ZpillsHTML(p.potw):'<span class="zpill znil">—</span>'}</span>
+      <span class="zrcell">${p.mvps?ZpillsHTML(p.mvps):'<span class="zpill znil">—</span>'}</span>
       <span class="zrtotal">${p.points}</span>
     </div>`).join("");
 }
