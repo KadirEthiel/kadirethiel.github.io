@@ -58,7 +58,7 @@ body::after{
 *{scrollbar-width:thin;scrollbar-color:var(--z6) rgba(4,8,22,.8)}
 button,input,select{font-family:'Manrope',sans-serif}
 .zs{position:relative;z-index:1;max-width:1600px;margin:0 auto;display:grid;gap:10px}
- 
+
 /* ── HERO ── */
 .zh-hero{
   position:relative;overflow:hidden;
@@ -88,7 +88,7 @@ button,input,select{font-family:'Manrope',sans-serif}
 .zbadge.zerr{color:var(--zr0);border-color:rgba(255,51,85,.28)}
 .zbval{font-size:16px;font-family:'Syne',sans-serif;color:var(--zb);line-height:1}
 @keyframes zpulse{50%{transform:scale(1.5);opacity:.5}}
- 
+
 /* ── NAV — now 4 tabs ── */
 .znav{
   display:flex;gap:0;background:rgba(4,8,22,.6);
@@ -101,7 +101,7 @@ button,input,select{font-family:'Manrope',sans-serif}
 .ztab:hover .ztab-ico{opacity:1}
 .ztab.zact{color:#fff;border-color:rgba(90,140,255,.5);background:linear-gradient(135deg,rgba(40,80,255,.9),rgba(30,55,180,.85));box-shadow:0 0 32px rgba(90,140,255,.28),inset 0 1px 0 rgba(255,255,255,.12)}
 .ztab.zact .ztab-ico{opacity:1}
- 
+
 /* ── HOF tab gold accent ── */
 .ztab[data-tab="hof"].zact{
   background:linear-gradient(135deg,rgba(200,140,0,.9),rgba(140,90,0,.85));
@@ -113,7 +113,7 @@ button,input,select{font-family:'Manrope',sans-serif}
   color:var(--zg0);
 }
 .ztab[data-tab="hof"]:not(.zact) .ztab-ico{color:rgba(255,213,56,.7)}
- 
+
 /* ── CONTROLS ── */
 .zctrl{display:grid;grid-template-columns:1fr;gap:8px;padding:12px;background:linear-gradient(180deg,rgba(8,14,36,.82),rgba(4,8,20,.75));border:1px solid var(--zline);border-radius:var(--r2);box-shadow:0 16px 60px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.035);backdrop-filter:blur(8px)}
 .zctrl-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
@@ -129,7 +129,7 @@ button,input,select{font-family:'Manrope',sans-serif}
 .zfchip.zfact::before{opacity:0}
 .zfchip-dot{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.7;flex-shrink:0}
 .zfchip.zfact .zfchip-dot{opacity:1;background:var(--zt0);box-shadow:0 0 8px var(--zt0)}
- 
+
 /* ── PODIUM ── */
 .zpod-wrap{display:grid;grid-template-columns:1fr 1.06fr 1fr;gap:14px;align-items:end;min-width:0}
 .zpod{position:relative;overflow:visible;border:1px solid var(--zline);border-radius:var(--r3);padding:24px 20px 20px;background:radial-gradient(ellipse 80% 60% at 10% 0%,rgba(90,140,255,.16),transparent),linear-gradient(160deg,rgba(10,18,46,.95),rgba(4,8,20,.98));display:grid;grid-template-rows:auto auto 1fr auto;gap:8px;min-height:180px;box-shadow:0 16px 60px rgba(0,0,0,.24);transition:transform .28s var(--ease),box-shadow .28s var(--easio),border-color .22s;min-width:0}
@@ -157,25 +157,25 @@ button,input,select{font-family:'Manrope',sans-serif}
 .zpod.zp3 .zplbl{color:rgba(165,125,255,.7)}
 .zpname{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 .zppills{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;align-self:end}
- 
+
 /* ── TABLE ── */
 .ztable-wrap{border:1px solid var(--zline);border-radius:var(--r3);background:linear-gradient(180deg,rgba(9,16,40,.95),rgba(4,8,20,.98));overflow-x:auto;overflow-y:hidden;box-shadow:0 24px 80px rgba(0,0,0,.30),inset 0 1px 0 rgba(255,255,255,.04);margin-top:10px}
 .ztable{display:grid}
 .zrow{display:grid;grid-template-columns:60px minmax(0,1.8fr) minmax(0,1.1fr) minmax(0,1.2fr) minmax(0,1.2fr) minmax(0,1.1fr) 72px;gap:0;align-items:stretch;min-height:68px;padding:0 12px;border-bottom:1px solid var(--zline2);transition:background .16s var(--easio);contain:layout style}
 .zrow.zrs{grid-template-columns:60px minmax(0,1.8fr) minmax(0,1.2fr) minmax(0,1.4fr) 72px;align-items:stretch;contain:layout style}
- 
+
 /* ── HOF table row — Rank | Player | Points (3 cols) ── */
 .zrow.zhof{
   grid-template-columns: 60px minmax(0,1fr) 120px !important;
   contain:layout style;
 }
- 
+
 .zrow:not(.zrh):hover{background:linear-gradient(90deg,rgba(90,140,255,.08),rgba(90,140,255,.02))}
 .zrow.zrh{min-height:52px;background:linear-gradient(180deg,rgba(10,20,50,.97),rgba(7,13,32,.97));font:700 11px 'Space Mono',monospace;letter-spacing:1.2px;text-transform:uppercase;color:var(--z7);position:sticky;top:0;z-index:3}
- 
+
 /* gold header for HOF */
 .zrow.zhof.zrh{color:var(--zg0)}
- 
+
 .zrow>span{height:auto;min-height:100%;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px 16px}
 .zrow>span:not(:last-child){border-right:1px solid rgba(120,160,255,.10)}
 .zrow.zrh>span:not(:last-child){border-right:1px solid rgba(120,160,255,.07)}
@@ -190,7 +190,7 @@ button,input,select{font-family:'Manrope',sans-serif}
 .zrow:nth-child(4) .zrtotal{color:var(--zc7)}
 .zempty,.zloading{padding:44px;text-align:center;color:var(--muted);font:700 13px 'Space Mono',monospace;letter-spacing:.5px}
 .zrteam{font:700 10px 'Space Mono',monospace;letter-spacing:.5px;color:var(--muted);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;opacity:.8}
- 
+
 /* ── HOF entry section header ── */
 .zhof-header{
   display:flex;align-items:center;gap:14px;
@@ -213,7 +213,7 @@ button,input,select{font-family:'Manrope',sans-serif}
   background:rgba(255,213,56,.07);border:1px solid rgba(255,213,56,.16);
   border-radius:999px;padding:4px 12px;
 }
- 
+
 /* ── PILLS ── */
 .zpill{--pc1:var(--z7);--pc2:var(--z6);--pfg:var(--za);--prim:rgba(90,140,255,.28);display:inline-flex;flex-direction:row;align-items:center;justify-content:center;gap:4px;min-height:28px;padding:6px 12px;border-radius:999px;border:1px solid var(--prim);background:linear-gradient(135deg,color-mix(in srgb,var(--pc1) 20%,transparent),color-mix(in srgb,var(--pc2) 15%,transparent)),rgba(0,0,0,.12);color:var(--pfg);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 14px color-mix(in srgb,var(--pc2) 22%,transparent);font:800 11.5px 'Space Mono',monospace;letter-spacing:.2px;line-height:1;white-space:nowrap;vertical-align:middle}
 .zpill small{display:inline-block;font:700 9px 'Space Mono',monospace;opacity:.72;letter-spacing:.8px;line-height:1}
@@ -248,7 +248,7 @@ button,input,select{font-family:'Manrope',sans-serif}
 .zview-enter{animation:zviewin .32s var(--ease) both}
 @keyframes zviewin{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 .zhide{display:none!important}
- 
+
 /* ── REFINED LAYOUT ── */
 .zpnum,.zrtotal,.zbval,.zrhex text,.zrrank svg text{font-family:'Oxanium','Space Mono',monospace!important;font-weight:800!important;letter-spacing:.2px!important}
 .zpname,.zrplayer b{font-family:'Manrope',sans-serif!important;letter-spacing:-.25px!important}
@@ -263,7 +263,7 @@ button,input,select{font-family:'Manrope',sans-serif}
 .zppills{grid-column:1 / -1!important;grid-row:3!important;margin-top:2px!important;align-self:end!important;justify-content:flex-start!important;max-height:54px!important;overflow:visible!important}
 .zcrown-wrap{top:-14px!important}
 .zcrown-svg{width:36px!important}
-.zrow{grid-template-columns:60px minmax(0,1.8fr) minmax(0,1.1fr) minmax(0,1.2fr) minmax(0,1.2fr) minmax(0,1.1fr) 72px!important;min-height:68px!important;padding:0 12px!important}
+.zrow{grid-template-columns:60px minmax(0,1.8fr) minmax(0,1fr) minmax(0,1.1fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.1fr) 72px!important;min-height:68px!important;padding:0 12px!important}
 .zrow.zrs{grid-template-columns:60px minmax(0,1.8fr) minmax(0,1.2fr) minmax(0,1.4fr) 72px!important;min-height:68px!important}
 .zrow.zrh{min-height:40px!important}
 .zrow>span{padding:6px 10px!important}
@@ -276,10 +276,10 @@ button,input,select{font-family:'Manrope',sans-serif}
 .zrtotal{font-size:30px!important}
 .zrow>span:not(:last-child){border-right:1px solid rgba(120,160,255,.135)!important}
 .zrow.zrh>span:not(:last-child){border-right:1px solid rgba(120,160,255,.09)!important}
- 
+
 /* ── MVP S8 ── */
 .zrow.zmvp{grid-template-columns:60px minmax(0,1.8fr) minmax(0,.9fr) minmax(0,1.1fr) minmax(0,.9fr) minmax(0,1.2fr) 72px!important;min-height:68px!important}
- 
+
 /* ── RESPONSIVE ── */
 @media(max-width:1200px){
   .zh-hero{grid-template-columns:1fr;padding:16px 20px}
@@ -299,7 +299,7 @@ button,input,select{font-family:'Manrope',sans-serif}
   body{padding:12px}
   .zt{font-size:56px}
   .zrow,.zrow.zrs,.zrow.zhof{grid-template-columns:64px 1.8fr 82px!important;min-height:74px}
-  .zrow>span:nth-child(3),.zrow>span:nth-child(4),.zrow>span:nth-child(5),.zrow>span:nth-child(6){display:none}
+  .zrow>span:nth-child(3),.zrow>span:nth-child(4),.zrow>span:nth-child(5),.zrow>span:nth-child(6),.zrow>span:nth-child(7),.zrow>span:nth-child(8){display:none}
   .zrow.zhof>span:nth-child(3){display:flex!important}
   .zrow>span{border-right:0!important}
   .zrtotal{font-size:28px}
@@ -315,7 +315,7 @@ button,input,select{font-family:'Manrope',sans-serif}
 </head>
 <body>
 <div class="zs">
- 
+
 <header class="zh-hero">
   <div class="zh-deco"></div>
   <svg class="zh-hex" width="340" height="200" viewBox="0 0 340 200" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -336,7 +336,7 @@ button,input,select{font-family:'Manrope',sans-serif}
     <div class="zbadge"><span>🏆</span><span>ELITE BOARD</span></div>
   </div>
 </header>
- 
+
 <!-- 4 TABS: Accolades | Seasonal Rankings | MVP Season 8 | Hall of Fame -->
 <nav class="znav">
   <button class="ztab zact" data-tab="hall">
@@ -356,7 +356,7 @@ button,input,select{font-family:'Manrope',sans-serif}
     Hall of Fame
   </button>
 </nav>
- 
+
 <section class="zctrl">
   <input class="zinput" id="zsearch" placeholder="Search player or achievement…"/>
   <div class="zfchips" id="zfilters">
@@ -367,7 +367,7 @@ button,input,select{font-family:'Manrope',sans-serif}
     <button class="zfchip" data-f="series"><span class="zfchip-dot"></span>Player of Series</button>
   </div>
 </section>
- 
+
 <!-- ACCOLADES view (previously Hall of Fame) -->
 <div id="zhallView" class="zview-enter">
   <section class="zpod-wrap" id="zpodium"></section>
@@ -375,21 +375,21 @@ button,input,select{font-family:'Manrope',sans-serif}
     <div class="ztable" id="zhallTable"><div class="zloading">Loading Accolades…</div></div>
   </section>
 </div>
- 
+
 <!-- SEASONAL RANKINGS view -->
 <div id="zseasView" class="zhide">
   <section class="ztable-wrap">
     <div class="ztable" id="zseasTable"><div class="zloading">Loading Seasonal Rankings…</div></div>
   </section>
 </div>
- 
+
 <!-- MVP SEASON 8 view -->
 <div id="zmvps8View" class="zhide">
   <section class="ztable-wrap">
     <div class="ztable" id="zmvps8Table"><div class="zloading">Loading Season 8…</div></div>
   </section>
 </div>
- 
+
 <!-- HALL OF FAME view (from Sheet 2) -->
 <div id="zhofView" class="zhide">
   <section class="ztable-wrap">
@@ -404,22 +404,22 @@ button,input,select{font-family:'Manrope',sans-serif}
     <div class="ztable" id="zhofTable"><div class="zloading">Loading Hall of Fame…</div></div>
   </section>
 </div>
- 
+
 <footer class="zfooter">Made by Zenoir and Fuas · MLV Rankings · 2026</footer>
 </div>
 <script>
-const ZAPI        = "https://script.google.com/macros/s/AKfycbyt4lB6xducpZ7MBTwLElftO4riBu17BVHctByGdV49zPNvT2h9I1mQXFJxIgb3r6Vu/exec";
+const ZAPI        = "https://script.google.com/macros/s/AKfycby2BXm96wJHK3t6_VXTUnwYKvf-gH3eIHXB-ig0wO-EvdR9AdNnyYbvuvNyW7wxpFRm/exec";
 const ZAPI_SEASON8= "https://script.google.com/macros/s/AKfycbxKVM7AQrVacRyGrED_nqB5zSTFBQ49YI74-l8DS6Cyin3uQobyjW2cG95j7zPrEySpQg/exec";
- 
+
 // Separate data stores — never mixed
 let ZHALL=[], ZSEAS=[], ZMVPS8=[], ZHOF=[], ZLSIG="", ZTAB="hall", ZFILT="all";
- 
+
 const Z$=id=>document.getElementById(id);
 const Zcl=v=>String(v??"").trim();
 const Zkey=(r,a)=>{for(const n of a)if(r[n]!=null&&Zcl(r[n]))return r[n];return""};
 const Zhas=(p,k)=>Zcl(p[k]).length>0;
 const Zsrch=p=>Object.values(p).join(" ").toLowerCase();
- 
+
 function Zstatus(txt,type){
   const el=Z$("zsync");el.innerHTML="";
   const dot=document.createElement("div");dot.className="zbdot";
@@ -427,9 +427,9 @@ function Zstatus(txt,type){
   el.appendChild(dot);el.appendChild(sp);
   el.className="zbadge"+(type?" z"+type:"");
 }
- 
+
 // ── Normalizers (each only touches its own data) ────────────────────────────
- 
+
 function ZnormHall(r){
   return{
     name:     Zcl(Zkey(r,["name","player","players","Player","Players","PLAYER","PLAYERS","Jogador","JOGADOR"])),
@@ -470,7 +470,7 @@ function ZnormHof(r){
     points:Number(Zkey(r,["points","totalPoints","total_points","Total Points","Total","TOTAL","TotalPoints","Pts","PTS"])||0)||0
   };
 }
- 
+
 // ── Payload reader — strictly separates the 3 sources ───────────────────────
 function ZreadPayload(raw){
   if(Array.isArray(raw)) return{hall:raw, seasonal:[], mvps8:[], hof:[]};
@@ -485,23 +485,23 @@ function ZreadPayload(raw){
     hof:      raw.hallOfFame       || raw.hof_sheet2 || raw.hof2   || []
   };
 }
- 
+
 async function Zsync(){
   try{
     if(!ZAPI||ZAPI.includes("SEU_LINK")){Zstatus("ADD SHEET LINK","err");return}
     Zstatus("SYNCING");
- 
+
     // Main sheet (Accolades + Seasonal + HOF from Sheet 2)
     const mainRes  = await fetch(ZAPI,{method:"GET",cache:"no-store"});
     if(!mainRes.ok) throw new Error("MAIN HTTP "+mainRes.status);
     let mainRaw;
     try{mainRaw=JSON.parse(await mainRes.text())}catch{throw new Error("MAIN NOT JSON")}
- 
+
     const pl   = ZreadPayload(mainRaw);
     const hall = (pl.hall    ||[]).map(ZnormHall).filter(p=>p.name);
     const seas = (pl.seasonal||[]).map(ZnormSeas).filter(p=>p.name);
     const hof  = (pl.hof     ||[]).map(ZnormHof ).filter(p=>p.name);
- 
+
     // Season 8 — separate endpoint
     let mvps8=[];
     if(ZAPI_SEASON8&&!ZAPI_SEASON8.includes("SEU_LINK")){
@@ -512,7 +512,7 @@ async function Zsync(){
         mvps8=(s8Pl.mvps8||[]).map(ZnormMvpS8).filter(p=>p.name);
       }catch(e){console.error("S8 error:",e)}
     }
- 
+
     const sig=JSON.stringify({hall,seas,mvps8,hof});
     if(sig!==ZLSIG){ZHALL=hall;ZSEAS=seas;ZMVPS8=mvps8;ZHOF=hof;ZLSIG=sig;ZrenderAll()}
     Zstatus("LIVE DATA","live");
@@ -527,7 +527,7 @@ async function Zsync(){
     }
   }
 }
- 
+
 // ── Helpers ─────────────────────────────────────────────────────────────────
 function Zesc(v){return String(v??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;")}
 function ZqtyClass(txt){const m=Zcl(txt).match(/(\d+)/);if(!m)return"";const n=+m[1];if(n>=10)return"zq4";if(n>=5)return"zq3";if(n>=3)return"zq2";if(n>=1)return"zq1";return""}
@@ -570,7 +570,7 @@ function ZchipHTML(txt,lbl){
   if(!items.length)return"";
   return items.map((item,i)=>`<span class="zpill ${ZachClass(item)}">${i===0&&lbl?`<small>${Zesc(lbl)}</small>`:""}${ZfmtAch(item)}</span>`).join("");
 }
- 
+
 // ── Sort / filter ────────────────────────────────────────────────────────────
 function ZsortHall(){return[...ZHALL].sort((a,b)=>b.points-a.points||a.name.localeCompare(b.name))}
 function ZfiltHall(){
@@ -596,7 +596,7 @@ function ZfiltHof(){
   const q=Z$("zsearch").value.toLowerCase().trim();
   return[...ZHOF].sort((a,b)=>b.points-a.points||a.name.localeCompare(b.name)).filter(p=>!q||Zsrch(p).includes(q));
 }
- 
+
 // ── SVG helpers ──────────────────────────────────────────────────────────────
 function ZcrownSVG(){
   return`<div class="zcrown-wrap"><svg class="zcrown-svg" viewBox="0 0 96 72" aria-hidden="true">
@@ -625,7 +625,7 @@ function ZrowHex(n){
     <text x="30" y="30" text-anchor="middle" dy=".36em" font-family="Space Mono,monospace" font-size="${fs}" font-weight="800" fill="${textFill}">#${txt}</text>
   </svg>`;
 }
- 
+
 // ── Render: Accolades (podium + table) ───────────────────────────────────────
 function ZrenderPodium(){
   const top=ZsortHall().slice(0,3);
@@ -646,7 +646,7 @@ function ZrenderPodium(){
 function ZrenderHall(){
   const base=ZsortHall();base.forEach((p,i)=>p._rank=i+1);
   const rows=ZfiltHall();
-  const head=`<div class="zrow zrh"><span>Rank</span><span>Player</span><span>TOP 1</span><span>TOP 5+</span><span>MVPs</span><span>Champions</span><span>Points</span></div>`;
+  const head=`<div class="zrow zrh"><span>Rank</span><span>Player</span><span>TOP 1</span><span>TOP 5+</span><span>MVPs</span><span>POTW</span><span>POTS</span><span>Champions</span><span>Points</span></div>`;
   if(!ZHALL.length){Z$("zhallTable").innerHTML='<div class="zempty">No Accolades data found.</div>';return}
   if(!rows.length){Z$("zhallTable").innerHTML=head+'<div class="zempty">No players match your search.</div>';return}
   Z$("zhallTable").innerHTML=head+rows.map(p=>`
@@ -656,11 +656,13 @@ function ZrenderHall(){
       <span class="zrcell">${ZpillsHTML(p.top1)}</span>
       <span class="zrcell">${ZpillsHTML(p.top5)}</span>
       <span class="zrcell">${ZpillsHTML(p.mvps)}</span>
+      <span class="zrcell">${p.potw   ? ZpillsHTML(p.potw)   : '<span class="zpill znil">—</span>'}</span>
+      <span class="zrcell">${p.series ? ZpillsHTML(p.series) : '<span class="zpill znil">—</span>'}</span>
       <span class="zrcell">${ZpillsHTML(p.champions)}</span>
       <span class="zrtotal">${p.points}</span>
     </div>`).join("");
 }
- 
+
 // ── Render: Seasonal Rankings ────────────────────────────────────────────────
 function ZrenderSeas(){
   const rows=ZfiltSeas();
@@ -676,7 +678,7 @@ function ZrenderSeas(){
       <span class="zrtotal">${p.points}</span>
     </div>`).join("");
 }
- 
+
 // ── Render: MVP Season 8 ─────────────────────────────────────────────────────
 function ZrenderMvps8(){
   const rows=ZfiltMvps8();
@@ -694,7 +696,7 @@ function ZrenderMvps8(){
       <span class="zrtotal">${p.points}</span>
     </div>`).join("");
 }
- 
+
 // ── Render: Hall of Fame (Sheet 2 — only name + points) ──────────────────────
 function ZrenderHof(){
   const rows=ZfiltHof();
@@ -709,7 +711,7 @@ function ZrenderHof(){
       <span><span class="zrtotal">${p.points}</span></span>
     </div>`).join("");
 }
- 
+
 // ── Tab switching ─────────────────────────────────────────────────────────────
 function ZsetTab(tab){
   ZTAB=tab;
@@ -721,7 +723,7 @@ function ZsetTab(tab){
   // Filter chips: only visible on Accolades tab
   Z$("zfilters").style.display=tab==="hall"?"":"none";
 }
- 
+
 // ── Render all (completely separate datasets) ────────────────────────────────
 function ZrenderAll(){
   // Count unique players across ALL datasets combined (for header badge)
@@ -738,7 +740,7 @@ function ZrenderAll(){
   ZrenderMvps8();
   ZrenderHof();
 }
- 
+
 // ── Events ───────────────────────────────────────────────────────────────────
 Z$("zsearch").addEventListener("input",ZrenderAll);
 document.querySelectorAll(".ztab").forEach(b=>b.addEventListener("click",()=>ZsetTab(b.dataset.tab)));
@@ -747,7 +749,7 @@ document.querySelectorAll(".zfchip").forEach(b=>b.addEventListener("click",()=>{
   document.querySelectorAll(".zfchip").forEach(c=>c.classList.toggle("zfact",c===b));
   ZrenderAll();
 }));
- 
+
 ZsetTab("hall");
 Zsync();
 setInterval(Zsync,60000);
