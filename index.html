@@ -23,9 +23,7 @@
 --ease:cubic-bezier(.22,.68,0,1.2);--easio:cubic-bezier(.4,0,.2,1);
 --r1:12px;--r2:18px;--r3:26px;--r4:40px;
 }
-
 html{overflow-x:hidden}
-
 html,body{min-height:100%;font-family:'Manrope',sans-serif;color:var(--text);background:var(--z0);-webkit-font-smoothing:antialiased}
 body{
   padding:12px;
@@ -34,8 +32,7 @@ body{
     radial-gradient(ellipse 60% 50% at 95% 5%,rgba(123,79,255,.22),transparent),
     radial-gradient(ellipse 50% 70% at 60% 110%,rgba(0,232,200,.12),transparent),
     linear-gradient(160deg,#02040f 0%,#060b1e 50%,#02040f 100%);
-  overflow-x:hidden;
-  min-height:100vh;
+  overflow-x:hidden;min-height:100vh;
 }
 body::before{
   content:"";position:fixed;inset:0;pointer-events:none;
@@ -53,18 +50,16 @@ body::after{
   animation:zFloat 14s ease-in-out infinite alternate;will-change:transform;z-index:0;
 }
 @keyframes zFloat{from{transform:translate3d(-12px,-8px,0)}to{transform:translate3d(12px,10px,0)}}
-
 ::-webkit-scrollbar{width:8px;height:8px}
 ::-webkit-scrollbar-track{background:rgba(4,8,22,.8);border-radius:99px}
 ::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--z6),var(--zc5));border-radius:99px;border:2px solid rgba(4,8,22,.8)}
 ::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,var(--z7),var(--zc6))}
 ::-webkit-scrollbar-corner{background:transparent}
 *{scrollbar-width:thin;scrollbar-color:var(--z6) rgba(4,8,22,.8)}
-
 button,input,select{font-family:'Manrope',sans-serif}
-
 .zs{position:relative;z-index:1;max-width:1600px;margin:0 auto;display:grid;gap:10px}
-
+ 
+/* ── HERO ── */
 .zh-hero{
   position:relative;overflow:hidden;
   border:1px solid var(--zn3);border-radius:var(--r3);
@@ -76,35 +71,16 @@ button,input,select{font-family:'Manrope',sans-serif}
   padding:18px 24px;
   display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;
 }
-.zh-deco{
-  position:absolute;right:-60px;top:-120px;width:420px;height:420px;border-radius:50%;
-  border:1px solid rgba(90,140,255,.10);box-shadow:inset 0 0 80px rgba(90,140,255,.08);pointer-events:none;
-}
+.zh-deco{position:absolute;right:-60px;top:-120px;width:420px;height:420px;border-radius:50%;border:1px solid rgba(90,140,255,.10);box-shadow:inset 0 0 80px rgba(90,140,255,.08);pointer-events:none}
 .zh-deco::after{content:"";position:absolute;inset:40px;border-radius:50%;border:1px solid rgba(90,140,255,.07)}
 .zh-hex{position:absolute;right:20px;top:12px;opacity:.18;pointer-events:none}
-.zk{
-  display:inline-flex;align-items:center;gap:8px;
-  font:700 11px 'Space Mono',monospace;letter-spacing:3px;color:var(--zt0);
-  text-transform:uppercase;margin-bottom:10px;text-shadow:0 0 20px rgba(0,232,200,.5);
-}
+.zk{display:inline-flex;align-items:center;gap:8px;font:700 11px 'Space Mono',monospace;letter-spacing:3px;color:var(--zt0);text-transform:uppercase;margin-bottom:10px;text-shadow:0 0 20px rgba(0,232,200,.5)}
 .zk::before{content:"";width:28px;height:2px;background:linear-gradient(90deg,var(--zt0),transparent);border-radius:2px}
 .zt{font-family:'Syne',sans-serif;font-size:52px;line-height:.92;letter-spacing:-1px;margin-bottom:10px}
-.zt span{
-  background:linear-gradient(110deg,#fff 0%,#c2d8ff 30%,var(--z7) 60%,var(--zc6) 85%,var(--zm0) 100%);
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-  filter:drop-shadow(0 0 40px rgba(90,140,255,.25));
-}
+.zt span{background:linear-gradient(110deg,#fff 0%,#c2d8ff 30%,var(--z7) 60%,var(--zc6) 85%,var(--zm0) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 40px rgba(90,140,255,.25))}
 .zsub{color:var(--muted);font-size:14px;line-height:1.6;font-weight:500;max-width:700px}
 .zh-stats{display:flex;flex-direction:column;gap:12px;align-items:flex-end}
-.zbadge{
-  display:inline-flex;align-items:center;gap:10px;
-  border:1px solid var(--zn2);background:linear-gradient(135deg,rgba(12,22,52,.85),rgba(6,10,24,.90));
-  border-radius:var(--r2);padding:8px 14px;
-  font:700 11px 'Space Mono',monospace;letter-spacing:1px;color:var(--z8);
-  white-space:nowrap;min-width:130px;
-  box-shadow:0 8px 32px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.04);
-  transition:border-color .2s,box-shadow .2s;
-}
+.zbadge{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--zn2);background:linear-gradient(135deg,rgba(12,22,52,.85),rgba(6,10,24,.90));border-radius:var(--r2);padding:8px 14px;font:700 11px 'Space Mono',monospace;letter-spacing:1px;color:var(--z8);white-space:nowrap;min-width:130px;box-shadow:0 8px 32px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.04);transition:border-color .2s,box-shadow .2s}
 .zbdot{width:8px;height:8px;border-radius:50%;background:var(--z7);box-shadow:0 0 12px var(--z7);flex-shrink:0}
 .zbadge.zlive .zbdot{background:var(--zt0);box-shadow:0 0 12px var(--zt0);animation:zpulse 1.8s ease-in-out infinite}
 .zbadge.zlive{color:var(--zt0);border-color:rgba(0,232,200,.28)}
@@ -112,139 +88,58 @@ button,input,select{font-family:'Manrope',sans-serif}
 .zbadge.zerr{color:var(--zr0);border-color:rgba(255,51,85,.28)}
 .zbval{font-size:16px;font-family:'Syne',sans-serif;color:var(--zb);line-height:1}
 @keyframes zpulse{50%{transform:scale(1.5);opacity:.5}}
-
+ 
+/* ── NAV — now 4 tabs ── */
 .znav{
   display:flex;gap:0;background:rgba(4,8,22,.6);
   border:1px solid var(--zline);border-radius:var(--r2);
   padding:6px;width:max-content;backdrop-filter:blur(10px);
 }
-.ztab{
-  display:flex;align-items:center;gap:8px;height:40px;padding:0 18px;
-  border-radius:var(--r1);border:1px solid transparent;background:transparent;
-  color:var(--muted);font:700 12px 'Manrope',sans-serif;letter-spacing:.3px;
-  cursor:pointer;transition:all .22s var(--easio);white-space:nowrap;
-}
+.ztab{display:flex;align-items:center;gap:8px;height:40px;padding:0 18px;border-radius:var(--r1);border:1px solid transparent;background:transparent;color:var(--muted);font:700 12px 'Manrope',sans-serif;letter-spacing:.3px;cursor:pointer;transition:all .22s var(--easio);white-space:nowrap}
 .ztab-ico{width:18px;height:18px;opacity:.7;transition:opacity .2s}
 .ztab:hover{color:var(--text);background:rgba(90,140,255,.08)}
 .ztab:hover .ztab-ico{opacity:1}
-.ztab.zact{
-  color:#fff;border-color:rgba(90,140,255,.5);
-  background:linear-gradient(135deg,rgba(40,80,255,.9),rgba(30,55,180,.85));
-  box-shadow:0 0 32px rgba(90,140,255,.28),inset 0 1px 0 rgba(255,255,255,.12);
-}
+.ztab.zact{color:#fff;border-color:rgba(90,140,255,.5);background:linear-gradient(135deg,rgba(40,80,255,.9),rgba(30,55,180,.85));box-shadow:0 0 32px rgba(90,140,255,.28),inset 0 1px 0 rgba(255,255,255,.12)}
 .ztab.zact .ztab-ico{opacity:1}
-
-.zctrl{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:8px;
-  padding:12px;
-  background:linear-gradient(180deg,rgba(8,14,36,.82),rgba(4,8,20,.75));
-  border:1px solid var(--zline);border-radius:var(--r2);
-  box-shadow:0 16px 60px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.035);
-  backdrop-filter:blur(8px);
+ 
+/* ── HOF tab gold accent ── */
+.ztab[data-tab="hof"].zact{
+  background:linear-gradient(135deg,rgba(200,140,0,.9),rgba(140,90,0,.85));
+  border-color:rgba(255,213,56,.55);
+  box-shadow:0 0 32px rgba(255,213,56,.22),inset 0 1px 0 rgba(255,255,255,.12);
 }
-
-.zctrl-row{
-  display:flex;
-  gap:12px;
-  align-items:center;
-  flex-wrap:wrap;
+.ztab[data-tab="hof"]:not(.zact):hover{
+  background:rgba(255,213,56,.07);
+  color:var(--zg0);
 }
-
-.zinput{
-  flex:1 1 240px;
-  min-width:0;
-  height:40px;padding:0 14px 0 42px;
-  border:1px solid var(--zline);border-radius:var(--r1);
-  background:url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='%235b7fff' stroke-width='2' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E") 14px center/16px 16px no-repeat,rgba(3,7,20,.75);
-  color:var(--text);font-weight:700;font-size:13px;outline:none;
-  transition:border-color .18s,box-shadow .18s;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
-}
+.ztab[data-tab="hof"]:not(.zact) .ztab-ico{color:rgba(255,213,56,.7)}
+ 
+/* ── CONTROLS ── */
+.zctrl{display:grid;grid-template-columns:1fr;gap:8px;padding:12px;background:linear-gradient(180deg,rgba(8,14,36,.82),rgba(4,8,20,.75));border:1px solid var(--zline);border-radius:var(--r2);box-shadow:0 16px 60px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.035);backdrop-filter:blur(8px)}
+.zctrl-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.zinput{flex:1 1 240px;min-width:0;height:40px;padding:0 14px 0 42px;border:1px solid var(--zline);border-radius:var(--r1);background:url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='%235b7fff' stroke-width='2' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E") 14px center/16px 16px no-repeat,rgba(3,7,20,.75);color:var(--text);font-weight:700;font-size:13px;outline:none;transition:border-color .18s,box-shadow .18s;box-shadow:inset 0 1px 0 rgba(255,255,255,.03)}
 .zinput::placeholder{color:var(--muted2)}
 .zinput:focus{border-color:rgba(90,140,255,.6);box-shadow:0 0 0 3px rgba(90,140,255,.12)}
-
-.zfchips{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  padding:2px 0;
-}
-
-.zfchip{
-  display:inline-flex;align-items:center;gap:6px;
-  height:34px;padding:0 12px;
-  border-radius:999px;
-  border:1px solid rgba(90,140,255,.22);
-  background:rgba(3,7,20,.75);
-  color:var(--muted);
-  font:700 11px 'Space Mono',monospace;letter-spacing:.6px;text-transform:uppercase;
-  cursor:pointer;transition:all .2s var(--easio);white-space:nowrap;
-  position:relative;overflow:hidden;
-}
-.zfchip::before{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(90,140,255,.12),rgba(90,140,255,.04));
-  opacity:0;transition:opacity .2s;
-}
+.zfchips{display:flex;flex-wrap:wrap;gap:8px;padding:2px 0}
+.zfchip{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 12px;border-radius:999px;border:1px solid rgba(90,140,255,.22);background:rgba(3,7,20,.75);color:var(--muted);font:700 11px 'Space Mono',monospace;letter-spacing:.6px;text-transform:uppercase;cursor:pointer;transition:all .2s var(--easio);white-space:nowrap;position:relative;overflow:hidden}
+.zfchip::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(90,140,255,.12),rgba(90,140,255,.04));opacity:0;transition:opacity .2s}
 .zfchip:hover{color:var(--z8);border-color:rgba(90,140,255,.42)}
 .zfchip:hover::before{opacity:1}
-.zfchip.zfact{
-  color:#fff;border-color:rgba(90,140,255,.6);
-  background:linear-gradient(135deg,rgba(40,80,255,.85),rgba(30,55,180,.8));
-  box-shadow:0 0 20px rgba(90,140,255,.22),inset 0 1px 0 rgba(255,255,255,.12);
-}
+.zfchip.zfact{color:#fff;border-color:rgba(90,140,255,.6);background:linear-gradient(135deg,rgba(40,80,255,.85),rgba(30,55,180,.8));box-shadow:0 0 20px rgba(90,140,255,.22),inset 0 1px 0 rgba(255,255,255,.12)}
 .zfchip.zfact::before{opacity:0}
 .zfchip-dot{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.7;flex-shrink:0}
 .zfchip.zfact .zfchip-dot{opacity:1;background:var(--zt0);box-shadow:0 0 8px var(--zt0)}
-
-.zpod-wrap{
-  display:grid;
-  grid-template-columns:1fr 1.06fr 1fr;
-  gap:14px;
-  align-items:end;
-  min-width:0;
-}
-
-.zpod{
-  position:relative;overflow:visible;
-  border:1px solid var(--zline);border-radius:var(--r3);padding:24px 20px 20px;
-  background:
-    radial-gradient(ellipse 80% 60% at 10% 0%,rgba(90,140,255,.16),transparent),
-    linear-gradient(160deg,rgba(10,18,46,.95),rgba(4,8,20,.98));
-  display:grid;grid-template-rows:auto auto 1fr auto;gap:8px;min-height:180px;
-  box-shadow:0 16px 60px rgba(0,0,0,.24);
-  transition:transform .28s var(--ease),box-shadow .28s var(--easio),border-color .22s;
-  min-width:0;
-}
-.zpod::before{
-  content:"";position:absolute;inset:0;border-radius:var(--r3);
-  background:linear-gradient(180deg,rgba(255,255,255,.04),transparent 60%);pointer-events:none;
-}
-.zpod::after{
-  content:"";position:absolute;top:0;left:12px;right:12px;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(90,140,255,.4),transparent);border-radius:2px;
-}
+ 
+/* ── PODIUM ── */
+.zpod-wrap{display:grid;grid-template-columns:1fr 1.06fr 1fr;gap:14px;align-items:end;min-width:0}
+.zpod{position:relative;overflow:visible;border:1px solid var(--zline);border-radius:var(--r3);padding:24px 20px 20px;background:radial-gradient(ellipse 80% 60% at 10% 0%,rgba(90,140,255,.16),transparent),linear-gradient(160deg,rgba(10,18,46,.95),rgba(4,8,20,.98));display:grid;grid-template-rows:auto auto 1fr auto;gap:8px;min-height:180px;box-shadow:0 16px 60px rgba(0,0,0,.24);transition:transform .28s var(--ease),box-shadow .28s var(--easio),border-color .22s;min-width:0}
+.zpod::before{content:"";position:absolute;inset:0;border-radius:var(--r3);background:linear-gradient(180deg,rgba(255,255,255,.04),transparent 60%);pointer-events:none}
+.zpod::after{content:"";position:absolute;top:0;left:12px;right:12px;height:1px;background:linear-gradient(90deg,transparent,rgba(90,140,255,.4),transparent);border-radius:2px}
 .zpod:hover{transform:translateY(-6px);box-shadow:0 0 40px rgba(90,140,255,.18),0 28px 80px rgba(0,0,0,.34);border-color:rgba(90,140,255,.32)}
-.zpod.zp1{
-  border-color:rgba(255,213,56,.55);
-  background:
-    radial-gradient(ellipse 90% 50% at 50% -10%,rgba(255,213,56,.22),transparent),
-    radial-gradient(ellipse 60% 70% at 8% 8%,rgba(255,180,0,.14),transparent),
-    linear-gradient(160deg,rgba(26,20,8,.96),rgba(4,8,20,.98));
-  box-shadow:0 0 50px rgba(255,213,56,.14),0 24px 80px rgba(0,0,0,.30);
-  min-height:210px;z-index:2;
-}
+.zpod.zp1{border-color:rgba(255,213,56,.55);background:radial-gradient(ellipse 90% 50% at 50% -10%,rgba(255,213,56,.22),transparent),radial-gradient(ellipse 60% 70% at 8% 8%,rgba(255,180,0,.14),transparent),linear-gradient(160deg,rgba(26,20,8,.96),rgba(4,8,20,.98));box-shadow:0 0 50px rgba(255,213,56,.14),0 24px 80px rgba(0,0,0,.30);min-height:210px;z-index:2}
 .zpod.zp1::after{background:linear-gradient(90deg,transparent,rgba(255,213,56,.85),transparent)}
 .zpod.zp1:hover{box-shadow:0 0 60px rgba(255,213,56,.22),0 30px 90px rgba(0,0,0,.36);border-color:rgba(255,213,56,.8)}
-.zpod.zp3{
-  border-color:rgba(123,79,255,.45);
-  background:
-    radial-gradient(ellipse 70% 60% at 8% 0%,rgba(123,79,255,.18),transparent),
-    linear-gradient(160deg,rgba(16,10,36,.96),rgba(4,8,20,.98));
-  box-shadow:0 0 38px rgba(123,79,255,.12),0 18px 60px rgba(0,0,0,.26);
-}
+.zpod.zp3{border-color:rgba(123,79,255,.45);background:radial-gradient(ellipse 70% 60% at 8% 0%,rgba(123,79,255,.18),transparent),linear-gradient(160deg,rgba(16,10,36,.96),rgba(4,8,20,.98));box-shadow:0 0 38px rgba(123,79,255,.12),0 18px 60px rgba(0,0,0,.26)}
 .zpod.zp3::after{background:linear-gradient(90deg,transparent,rgba(123,79,255,.7),transparent)}
 .zpod.zp3:hover{border-color:rgba(123,79,255,.7);box-shadow:0 0 50px rgba(123,79,255,.20),0 28px 80px rgba(0,0,0,.34)}
 .zcrown-wrap{position:absolute;top:-22px;left:50%;transform:translateX(-50%);z-index:9}
@@ -253,7 +148,6 @@ button,input,select{font-family:'Manrope',sans-serif}
 .zpod-rank{justify-self:start}
 .zrhex{display:inline-block;width:68px;height:68px;flex-shrink:0}
 .zrhex svg{width:100%;height:100%}
-
 .zpod-score{justify-self:end;text-align:right;margin-top:-4px}
 .zpnum{font-family:'Syne',sans-serif;font-size:52px;line-height:.88;color:var(--z7);text-shadow:0 0 24px rgba(90,140,255,.3)}
 .zpod.zp1 .zpnum{color:var(--zg0);text-shadow:0 0 28px rgba(255,213,56,.35)}
@@ -263,78 +157,65 @@ button,input,select{font-family:'Manrope',sans-serif}
 .zpod.zp3 .zplbl{color:rgba(165,125,255,.7)}
 .zpname{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 .zppills{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;align-self:end}
-
-.ztable-wrap{
-  border:1px solid var(--zline);border-radius:var(--r3);
-  background:linear-gradient(180deg,rgba(9,16,40,.95),rgba(4,8,20,.98));
-  overflow-x:auto;overflow-y:hidden;
-  box-shadow:0 24px 80px rgba(0,0,0,.30),inset 0 1px 0 rgba(255,255,255,.04);
-  margin-top:10px;
-}
+ 
+/* ── TABLE ── */
+.ztable-wrap{border:1px solid var(--zline);border-radius:var(--r3);background:linear-gradient(180deg,rgba(9,16,40,.95),rgba(4,8,20,.98));overflow-x:auto;overflow-y:hidden;box-shadow:0 24px 80px rgba(0,0,0,.30),inset 0 1px 0 rgba(255,255,255,.04);margin-top:10px}
 .ztable{display:grid}
-.zrow{
-  display:grid;
-  grid-template-columns:60px minmax(0,1.8fr) minmax(0,1.1fr) minmax(0,1.2fr) minmax(0,1.2fr) minmax(0,1.1fr) 72px;
-  gap:0;align-items:stretch;min-height:68px;padding:0 12px;
-  border-bottom:1px solid var(--zline2);
-  transition:background .16s var(--easio);contain:layout style;
+.zrow{display:grid;grid-template-columns:60px minmax(0,1.8fr) minmax(0,1.1fr) minmax(0,1.2fr) minmax(0,1.2fr) minmax(0,1.1fr) 72px;gap:0;align-items:stretch;min-height:68px;padding:0 12px;border-bottom:1px solid var(--zline2);transition:background .16s var(--easio);contain:layout style}
+.zrow.zrs{grid-template-columns:60px minmax(0,1.8fr) minmax(0,1.2fr) minmax(0,1.4fr) 72px;align-items:stretch;contain:layout style}
+ 
+/* ── HOF table row — Rank | Player | Points (3 cols) ── */
+.zrow.zhof{
+  grid-template-columns: 60px minmax(0,1fr) 120px !important;
+  contain:layout style;
 }
-.zrow.zrs{
-  grid-template-columns:60px minmax(0,1.8fr) minmax(0,1.2fr) minmax(0,1.4fr) 72px;
-  align-items:stretch;contain:layout style;
-}
+ 
 .zrow:not(.zrh):hover{background:linear-gradient(90deg,rgba(90,140,255,.08),rgba(90,140,255,.02))}
-.zrow.zrh{
-  min-height:52px;
-  background:linear-gradient(180deg,rgba(10,20,50,.97),rgba(7,13,32,.97));
-  font:700 11px 'Space Mono',monospace;letter-spacing:1.2px;text-transform:uppercase;
-  color:var(--z7);position:sticky;top:0;z-index:3;
-}
-.zrow>span{
-  height:auto;min-height:100%;display:flex;align-items:center;justify-content:center;
-  text-align:center;padding:10px 16px;
-}
+.zrow.zrh{min-height:52px;background:linear-gradient(180deg,rgba(10,20,50,.97),rgba(7,13,32,.97));font:700 11px 'Space Mono',monospace;letter-spacing:1.2px;text-transform:uppercase;color:var(--z7);position:sticky;top:0;z-index:3}
+ 
+/* gold header for HOF */
+.zrow.zhof.zrh{color:var(--zg0)}
+ 
+.zrow>span{height:auto;min-height:100%;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px 16px}
 .zrow>span:not(:last-child){border-right:1px solid rgba(120,160,255,.10)}
 .zrow.zrh>span:not(:last-child){border-right:1px solid rgba(120,160,255,.07)}
 .zrrank{display:flex;align-items:center;justify-content:center}
 .zrrank svg{width:58px;height:58px;flex-shrink:0}
 .zrplayer{display:grid;gap:3px;justify-items:center;text-align:center;padding:12px 18px!important}
 .zrplayer b{font-size:19px;font-weight:800;line-height:1.15;color:#eef6ff;word-break:break-word;white-space:normal}
-.zrcell{
-  display:flex!important;flex-wrap:wrap!important;gap:6px!important;
-  justify-content:center!important;align-items:center!important;align-content:center!important;
-  text-align:center!important;overflow:visible!important;padding:10px 12px!important;
-  white-space:normal!important;height:auto!important;min-height:52px!important;
-}
+.zrcell{display:flex!important;flex-wrap:wrap!important;gap:6px!important;justify-content:center!important;align-items:center!important;align-content:center!important;text-align:center!important;overflow:visible!important;padding:10px 12px!important;white-space:normal!important;height:auto!important;min-height:52px!important}
 .zrtotal{font-family:'Syne',sans-serif;font-size:34px;font-weight:700;color:var(--z8)}
 .zrow:nth-child(2) .zrtotal{color:var(--zg0)}
 .zrow:nth-child(3) .zrtotal{color:var(--z7)}
 .zrow:nth-child(4) .zrtotal{color:var(--zc7)}
 .zempty,.zloading{padding:44px;text-align:center;color:var(--muted);font:700 13px 'Space Mono',monospace;letter-spacing:.5px}
-
-/* Team tag below player name */
-.zrteam{
-  font:700 10px 'Space Mono',monospace;
-  letter-spacing:.5px;
-  color:var(--muted);
-  margin-top:3px;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  max-width:100%;
-  opacity:.8;
+.zrteam{font:700 10px 'Space Mono',monospace;letter-spacing:.5px;color:var(--muted);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;opacity:.8}
+ 
+/* ── HOF entry section header ── */
+.zhof-header{
+  display:flex;align-items:center;gap:14px;
+  padding:20px 24px 16px;
+  border-bottom:1px solid rgba(255,213,56,.12);
 }
-
-.zpill{
-  --pc1:var(--z7);--pc2:var(--z6);--pfg:var(--za);--prim:rgba(90,140,255,.28);
-  display:inline-flex;flex-direction:row;align-items:center;justify-content:center;gap:4px;
-  min-height:28px;padding:6px 12px;border-radius:999px;
-  border:1px solid var(--prim);
-  background:linear-gradient(135deg,color-mix(in srgb,var(--pc1) 20%,transparent),color-mix(in srgb,var(--pc2) 15%,transparent)),rgba(0,0,0,.12);
-  color:var(--pfg);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 14px color-mix(in srgb,var(--pc2) 22%,transparent);
-  font:800 11.5px 'Space Mono',monospace;letter-spacing:.2px;line-height:1;white-space:nowrap;vertical-align:middle;
+.zhof-icon{
+  width:44px;height:44px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,213,56,.22),rgba(200,140,0,.08));
+  border:1px solid rgba(255,213,56,.38);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 20px rgba(255,213,56,.18);
+  font-size:22px;flex-shrink:0;
 }
+.zhof-title{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--zg0)}
+.zhof-sub{font-size:12px;color:var(--muted);margin-top:2px;letter-spacing:.3px}
+.zhof-count{
+  margin-left:auto;
+  font:700 11px 'Space Mono',monospace;letter-spacing:1px;color:var(--muted);
+  background:rgba(255,213,56,.07);border:1px solid rgba(255,213,56,.16);
+  border-radius:999px;padding:4px 12px;
+}
+ 
+/* ── PILLS ── */
+.zpill{--pc1:var(--z7);--pc2:var(--z6);--pfg:var(--za);--prim:rgba(90,140,255,.28);display:inline-flex;flex-direction:row;align-items:center;justify-content:center;gap:4px;min-height:28px;padding:6px 12px;border-radius:999px;border:1px solid var(--prim);background:linear-gradient(135deg,color-mix(in srgb,var(--pc1) 20%,transparent),color-mix(in srgb,var(--pc2) 15%,transparent)),rgba(0,0,0,.12);color:var(--pfg);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 14px color-mix(in srgb,var(--pc2) 22%,transparent);font:800 11.5px 'Space Mono',monospace;letter-spacing:.2px;line-height:1;white-space:nowrap;vertical-align:middle}
 .zpill small{display:inline-block;font:700 9px 'Space Mono',monospace;opacity:.72;letter-spacing:.8px;line-height:1}
 .zpill.znil{opacity:.32;background:transparent;border-color:rgba(120,160,255,.10);box-shadow:none;color:var(--muted2)}
 .zpill.zplibero{--pc1:#ff8adf;--pc2:#ff3fbf;--pfg:#ffd8f4;--prim:rgba(255,63,191,.28)}
@@ -352,27 +233,54 @@ button,input,select{font-family:'Manrope',sans-serif}
 .zpill.zpallstar{--pc1:#c58a5a;--pc2:#7a431f;--pfg:#ffe8d0;--prim:rgba(122,67,31,.32)}
 .zpill.zpfinalmvp{--pc1:#ffffff;--pc2:#b7c7e8;--pfg:#ffffff;--prim:rgba(200,220,255,.35)}
 .zpill.zpsemifinalmvp{--pc1:#d6c4ff;--pc2:#8b5cf6;--pfg:#f0eaff;--prim:rgba(139,92,246,.30)}
-/* MOP / MDP / MVP pills */
 .zpill.zpmop{--pc1:#ff9f5a;--pc2:#ff6a00;--pfg:#fff0e0;--prim:rgba(255,106,0,.30)}
 .zpill.zpmdp{--pc1:#5af0ff;--pc2:#00b8d9;--pfg:#e0fbff;--prim:rgba(0,184,217,.30)}
 .zpill.zpmvp{--pc1:#fff29a;--pc2:#ffb800;--pfg:#fff7c7;--prim:rgba(255,184,0,.35)}
-/* POTW pill */
 .zpill.zppotw{--pc1:#ff9fd8;--pc2:#ff5db4;--pfg:#ffd8f4;--prim:rgba(255,93,180,.30)}
-
+.zpill:hover{transform:scale(1.08)!important;z-index:20!important}
 .zqty{display:inline;font:800 11.5px 'Space Mono',monospace;letter-spacing:.2px;line-height:1;vertical-align:middle}
 .zqty.zq1{background:linear-gradient(180deg,#fff,#cbd7e8 55%,#8898ad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 6px rgba(200,215,235,.5))}
 .zqty.zq2{background:linear-gradient(180deg,#fff8ad,#ffe13b 55%,#c89600);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 8px rgba(255,225,59,.4))}
 .zqty.zq3{background:linear-gradient(180deg,#ffd6a1,#ff8a24 55%,#bb4500);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 10px rgba(255,138,36,.45))}
 .zqty.zq4{background:linear-gradient(180deg,#e8d6ff,#8b5cf6 52%,#2a0d6e);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 12px rgba(139,92,246,.55))}
 .zach{display:inline;color:var(--pfg);font:800 11.5px 'Space Mono',monospace;line-height:1;vertical-align:middle}
-
 .zfooter{text-align:center;font:700 11px 'Space Mono',monospace;letter-spacing:1.5px;color:var(--muted2);padding:10px;opacity:.6}
-
 .zview-enter{animation:zviewin .32s var(--ease) both}
 @keyframes zviewin{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 .zhide{display:none!important}
-
-/* ===== RESPONSIVE ===== */
+ 
+/* ── REFINED LAYOUT ── */
+.zpnum,.zrtotal,.zbval,.zrhex text,.zrrank svg text{font-family:'Oxanium','Space Mono',monospace!important;font-weight:800!important;letter-spacing:.2px!important}
+.zpname,.zrplayer b{font-family:'Manrope',sans-serif!important;letter-spacing:-.25px!important}
+.zpod{min-height:130px!important;padding:16px 18px 14px!important;display:grid!important;grid-template-columns:60px minmax(0,1fr) auto!important;grid-template-rows:auto 1fr auto!important;gap:6px 12px!important;align-items:center!important}
+.zpod.zp1{min-height:144px!important}
+.zpod-rank{grid-column:1!important;grid-row:1!important;align-self:start!important;justify-self:start!important}
+.zpod-score{grid-column:3!important;grid-row:1!important;align-self:start!important;justify-self:end!important;margin:0!important}
+.zpname{grid-column:1 / -1!important;grid-row:2!important;align-self:center!important;justify-self:start!important;max-width:100%!important;font-size:20px!important;line-height:1.08!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+.zpnum{font-size:36px!important;line-height:.88!important}
+.zplbl{font-size:9px!important;letter-spacing:1.2px!important}
+.zrhex{width:44px!important;height:44px!important}
+.zppills{grid-column:1 / -1!important;grid-row:3!important;margin-top:2px!important;align-self:end!important;justify-content:flex-start!important;max-height:54px!important;overflow:visible!important}
+.zcrown-wrap{top:-14px!important}
+.zcrown-svg{width:36px!important}
+.zrow{grid-template-columns:60px minmax(0,1.8fr) minmax(0,1.1fr) minmax(0,1.2fr) minmax(0,1.2fr) minmax(0,1.1fr) 72px!important;min-height:68px!important;padding:0 12px!important}
+.zrow.zrs{grid-template-columns:60px minmax(0,1.8fr) minmax(0,1.2fr) minmax(0,1.4fr) 72px!important;min-height:68px!important}
+.zrow.zrh{min-height:40px!important}
+.zrow>span{padding:6px 10px!important}
+.zrrank svg{width:40px!important;height:40px!important}
+.zrplayer{padding:8px 12px!important;justify-items:center!important;align-content:center!important;overflow:hidden!important}
+.zrplayer b{font-size:17px!important;line-height:1.15!important;max-width:100%!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;word-break:normal!important}
+.zrcell{padding:8px 10px!important;gap:6px!important;min-height:46px!important;align-content:center!important;overflow:visible!important}
+.zpill{min-height:25px!important;padding:5px 10px!important;font-size:10.5px!important;line-height:1!important}
+.zqty,.zach{font-size:10.5px!important}
+.zrtotal{font-size:30px!important}
+.zrow>span:not(:last-child){border-right:1px solid rgba(120,160,255,.135)!important}
+.zrow.zrh>span:not(:last-child){border-right:1px solid rgba(120,160,255,.09)!important}
+ 
+/* ── MVP S8 ── */
+.zrow.zmvp{grid-template-columns:60px minmax(0,1.8fr) minmax(0,.9fr) minmax(0,1.1fr) minmax(0,.9fr) minmax(0,1.2fr) 72px!important;min-height:68px!important}
+ 
+/* ── RESPONSIVE ── */
 @media(max-width:1200px){
   .zh-hero{grid-template-columns:1fr;padding:16px 20px}
   .zh-stats{flex-direction:row;flex-wrap:wrap;align-items:flex-start;gap:8px}
@@ -385,259 +293,29 @@ button,input,select{font-family:'Manrope',sans-serif}
   .zpod-wrap{grid-template-columns:1fr}
   .zpod.zp1{order:-1;min-height:130px!important}
   .zpod:hover,.zpod.zp1:hover{transform:none}
-  .znav{width:100%;display:grid;grid-template-columns:1fr 1fr 1fr!important}
-  .ztab{justify-content:center}
+  .znav{width:100%!important;display:grid!important;grid-template-columns:1fr 1fr!important}
 }
 @media(max-width:760px){
   body{padding:12px}
   .zt{font-size:56px}
-  .zrow,.zrow.zrs{grid-template-columns:64px 1.8fr 82px!important;min-height:74px}
+  .zrow,.zrow.zrs,.zrow.zhof{grid-template-columns:64px 1.8fr 82px!important;min-height:74px}
   .zrow>span:nth-child(3),.zrow>span:nth-child(4),.zrow>span:nth-child(5),.zrow>span:nth-child(6){display:none}
+  .zrow.zhof>span:nth-child(3){display:flex!important}
   .zrow>span{border-right:0!important}
   .zrtotal{font-size:28px}
   .zrplayer b{font-size:14px}
   .zrcell{padding:4px 6px!important}
   .zh-hero{padding:18px 16px}
   .zrrank svg{width:46px;height:46px}
-}
-
-/* ===============================
-   FINAL LAYOUT TUNE - TABLE + PODIUM
-   =============================== */
-
-.zpnum,
-.zrtotal,
-.zbval,
-.zrhex text,
-.zrrank svg text{
-  font-family:'Oxanium','Space Mono',monospace!important;
-  font-weight:800!important;
-  letter-spacing:.2px!important;
-}
-
-.zpname,
-.zrplayer b{
-  font-family:'Manrope',sans-serif!important;
-  letter-spacing:-.25px!important;
-  font-stretch:normal!important;
-}
-
-.zpod{
-  min-height:130px!important;
-  padding:16px 18px 14px!important;
-  display:grid!important;
-  grid-template-columns:60px minmax(0,1fr) auto!important;
-  grid-template-rows:auto 1fr auto!important;
-  gap:6px 12px!important;
-  align-items:center!important;
-}
-
-.zpod.zp1{
-  min-height:144px!important;
-}
-
-.zpod-rank{
-  grid-column:1!important;
-  grid-row:1!important;
-  align-self:start!important;
-  justify-self:start!important;
-}
-
-.zpod-score{
-  grid-column:3!important;
-  grid-row:1!important;
-  align-self:start!important;
-  justify-self:end!important;
-  margin:0!important;
-}
-
-.zpname{
-  grid-column:1 / -1!important;
-  grid-row:2!important;
-  align-self:center!important;
-  justify-self:start!important;
-  max-width:100%!important;
-  font-size:20px!important;
-  line-height:1.08!important;
-  white-space:nowrap!important;
-  overflow:hidden!important;
-  text-overflow:ellipsis!important;
-}
-
-.zpnum{
-  font-size:36px!important;
-  line-height:.88!important;
-}
-
-.zplbl{
-  font-size:9px!important;
-  letter-spacing:1.2px!important;
-}
-
-.zrhex{
-  width:44px!important;
-  height:44px!important;
-}
-
-.zppills{
-  grid-column:1 / -1!important;
-  grid-row:3!important;
-  margin-top:2px!important;
-  align-self:end!important;
-  justify-content:flex-start!important;
-  max-height:54px!important;
-  overflow:visible!important;
-}
-
-.zcrown-wrap{
-  top:-14px!important;
-}
-
-.zcrown-svg{
-  width:36px!important;
-}
-
-.zrow{
-  grid-template-columns:
-    60px
-    minmax(0,1.8fr)
-    minmax(0,1.1fr)
-    minmax(0,1.2fr)
-    minmax(0,1.2fr)
-    minmax(0,1.1fr)
-    72px!important;
-  min-height:68px!important;
-  padding:0 12px!important;
-}
-
-.zrow.zrs{
-  grid-template-columns:
-    60px
-    minmax(0,1.8fr)
-    minmax(0,1.2fr)
-    minmax(0,1.4fr)
-    72px!important;
-  min-height:68px!important;
-}
-
-.zrow.zrh{
-  min-height:40px!important;
-}
-
-.zrow>span{
-  padding:6px 10px!important;
-}
-
-.zrrank svg{
-  width:40px!important;
-  height:40px!important;
-}
-
-.zrplayer{
-  padding:8px 12px!important;
-  justify-items:center!important;
-  align-content:center!important;
-  overflow:hidden!important;
-}
-
-.zrplayer b{
-  font-size:17px!important;
-  line-height:1.15!important;
-  max-width:100%!important;
-  white-space:nowrap!important;
-  overflow:hidden!important;
-  text-overflow:ellipsis!important;
-  word-break:normal!important;
-}
-
-.zrcell{
-  padding:8px 10px!important;
-  gap:6px!important;
-  min-height:46px!important;
-  align-content:center!important;
-  overflow:visible!important;
-}
-
-.zpill{
-  min-height:25px!important;
-  padding:5px 10px!important;
-  font-size:10.5px!important;
-  line-height:1!important;
-  transform-origin:center!important;
-}
-
-.zpill:hover{
-  transform:scale(1.08)!important;
-  z-index:20!important;
-}
-
-.zqty,
-.zach{
-  font-size:10.5px!important;
-}
-
-.zrtotal{
-  font-size:30px!important;
-}
-
-.zrow>span:not(:last-child){
-  border-right:1px solid rgba(120,160,255,.135)!important;
-}
-
-.zrow.zrh>span:not(:last-child){
-  border-right:1px solid rgba(120,160,255,.09)!important;
-}
-
-@media(max-width:760px){
-  .zpod{
-    grid-template-columns:54px minmax(0,1fr) auto!important;
-    min-height:140px!important;
-  }
-  .zpname{font-size:20px!important}
-  .zpnum{font-size:36px!important}
-  .zrow,.zrow.zrs{
-    grid-template-columns:58px minmax(0,1fr) 78px!important;
-    min-height:68px!important;
-  }
-  .zrplayer b{font-size:14px!important}
-}
-
-
-/* ===========================
-   MVP'S S8 TAB — 7 columnas
-   Rank | Player+Team | Top 1 | Top +5 | POTW | MVPs | Points
-   =========================== */
-.zrow.zmvp{
-  grid-template-columns:
-    60px
-    minmax(0,1.8fr)
-    minmax(0,0.9fr)
-    minmax(0,1.1fr)
-    minmax(0,0.9fr)
-    minmax(0,1.2fr)
-    72px!important;
-  min-height:68px!important;
-}
-
-@media(max-width:1100px){
-  .znav{grid-template-columns:1fr 1fr 1fr!important}
-}
-@media(max-width:760px){
-  .znav{grid-template-columns:1fr!important}
-  .zrow.zmvp{
-    grid-template-columns:58px minmax(0,1fr) 78px!important;
-    min-height:68px!important;
-  }
-  .zrow.zmvp>span:nth-child(3),
-  .zrow.zmvp>span:nth-child(4),
-  .zrow.zmvp>span:nth-child(5),
-  .zrow.zmvp>span:nth-child(6){display:none}
+  .znav{grid-template-columns:1fr 1fr!important}
+  .zrow.zmvp{grid-template-columns:58px minmax(0,1fr) 78px!important;min-height:68px!important}
+  .zrow.zmvp>span:nth-child(3),.zrow.zmvp>span:nth-child(4),.zrow.zmvp>span:nth-child(5),.zrow.zmvp>span:nth-child(6){display:none}
 }
 </style>
 </head>
 <body>
 <div class="zs">
-
+ 
 <header class="zh-hero">
   <div class="zh-deco"></div>
   <svg class="zh-hex" width="340" height="200" viewBox="0 0 340 200" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -653,22 +331,17 @@ button,input,select{font-family:'Manrope',sans-serif}
     <p class="zsub">Here you will see all the informations about all MLV All Stars.</p>
   </div>
   <div class="zh-stats">
-    <div class="zbadge" id="zsync">
-      <div class="zbdot"></div><span>SYNCING</span>
-    </div>
-    <div class="zbadge">
-      <span class="zbval" id="ztotal">0</span><span>PLAYERS</span>
-    </div>
-    <div class="zbadge">
-      <span>🏆</span><span>ELITE BOARD</span>
-    </div>
+    <div class="zbadge" id="zsync"><div class="zbdot"></div><span>SYNCING</span></div>
+    <div class="zbadge"><span class="zbval" id="ztotal">0</span><span>PLAYERS</span></div>
+    <div class="zbadge"><span>🏆</span><span>ELITE BOARD</span></div>
   </div>
 </header>
-
+ 
+<!-- 4 TABS: Accolades | Seasonal Rankings | MVP Season 8 | Hall of Fame -->
 <nav class="znav">
   <button class="ztab zact" data-tab="hall">
     <svg class="ztab-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4h10v3h4v2a6 6 0 0 1-5.1 5.9A6 6 0 0 1 13 17.9V20h4v2H7v-2h4v-2.1a6 6 0 0 1-2.9-3A6 6 0 0 1 3 9V7h4V4Zm10 5v3.75A4 4 0 0 0 19 9h-2ZM5 9a4 4 0 0 0 2 3.75V9H5Z"/></svg>
-    Hall of Fame
+    Accolades
   </button>
   <button class="ztab" data-tab="seasonal">
     <svg class="ztab-ico" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 5.88 6.49.94-4.7 4.58 1.1 6.46L12 16.82 6.2 19.86l1.11-6.46-4.7-4.58 6.49-.94L12 2Z"/></svg>
@@ -678,8 +351,12 @@ button,input,select{font-family:'Manrope',sans-serif}
     <svg class="ztab-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 15.1 8.4 22 9.4l-5 4.9 1.2 6.9L12 17.9 5.8 21.2 7 14.3 2 9.4l6.9-1L12 2Zm0 4.4-1.6 3.2-3.5.5 2.5 2.5-.6 3.5 3.2-1.7 3.2 1.7-.6-3.5 2.5-2.5-3.5-.5L12 6.4Z"/></svg>
     MVP Season 8
   </button>
+  <button class="ztab" data-tab="hof">
+    <svg class="ztab-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1 9.5 6.5 3 7.5l4.5 4.4-1.1 6.3L12 15.4l5.6 2.8-1.1-6.3L21 7.5l-6.5-1L12 1Zm0 3.2 1.7 3.5 3.8.55-2.75 2.68.65 3.78L12 12.9l-3.42 1.8.65-3.78L6.5 8.25l3.8-.55L12 4.2Z"/></svg>
+    Hall of Fame
+  </button>
 </nav>
-
+ 
 <section class="zctrl">
   <input class="zinput" id="zsearch" placeholder="Search player or achievement…"/>
   <div class="zfchips" id="zfilters">
@@ -690,169 +367,182 @@ button,input,select{font-family:'Manrope',sans-serif}
     <button class="zfchip" data-f="series"><span class="zfchip-dot"></span>Player of Series</button>
   </div>
 </section>
-
+ 
+<!-- ACCOLADES view (previously Hall of Fame) -->
 <div id="zhallView" class="zview-enter">
   <section class="zpod-wrap" id="zpodium"></section>
   <section class="ztable-wrap">
-    <div class="ztable" id="zhallTable">
-      <div class="zloading">Loading Hall of Fame…</div>
-    </div>
+    <div class="ztable" id="zhallTable"><div class="zloading">Loading Accolades…</div></div>
   </section>
 </div>
-
+ 
+<!-- SEASONAL RANKINGS view -->
 <div id="zseasView" class="zhide">
   <section class="ztable-wrap">
-    <div class="ztable" id="zseasTable">
-      <div class="zloading">Loading Seasonal Rankings…</div>
-    </div>
+    <div class="ztable" id="zseasTable"><div class="zloading">Loading Seasonal Rankings…</div></div>
   </section>
 </div>
-
+ 
+<!-- MVP SEASON 8 view -->
 <div id="zmvps8View" class="zhide">
   <section class="ztable-wrap">
-    <div class="ztable" id="zmvps8Table">
-      <div class="zloading">Loading Season 8…</div>
-    </div>
+    <div class="ztable" id="zmvps8Table"><div class="zloading">Loading Season 8…</div></div>
   </section>
 </div>
-
+ 
+<!-- HALL OF FAME view (from Sheet 2) -->
+<div id="zhofView" class="zhide">
+  <section class="ztable-wrap">
+    <div class="zhof-header">
+      <div class="zhof-icon">🏆</div>
+      <div>
+        <div class="zhof-title">Hall of Fame</div>
+        <div class="zhof-sub">Elite players who have proven their legacy in MLV</div>
+      </div>
+      <div class="zhof-count" id="zhofCount">0 inductees</div>
+    </div>
+    <div class="ztable" id="zhofTable"><div class="zloading">Loading Hall of Fame…</div></div>
+  </section>
+</div>
+ 
 <footer class="zfooter">Made by Zenoir and Fuas · MLV Rankings · 2026</footer>
 </div>
 <script>
-const ZAPI="https://script.google.com/macros/s/AKfycby2BXm96wJHK3t6_VXTUnwYKvf-gH3eIHXB-ig0wO-EvdR9AdNnyYbvuvNyW7wxpFRm/exec";
-const ZAPI_SEASON8="https://script.google.com/macros/s/AKfycbxKVM7AQrVacRyGrED_nqB5zSTFBQ49YI74-l8DS6Cyin3uQobyjW2cG95j7zPrEySpQg/exec";
-let ZHALL=[],ZSEAS=[],ZMVPS8=[],ZLSIG="",ZTAB="hall",ZFILT="all";
+const ZAPI        = "https://script.google.com/macros/s/AKfycby2BXm96wJHK3t6_VXTUnwYKvf-gH3eIHXB-ig0wO-EvdR9AdNnyYbvuvNyW7wxpFRm/exec";
+const ZAPI_SEASON8= "https://script.google.com/macros/s/AKfycbxKVM7AQrVacRyGrED_nqB5zSTFBQ49YI74-l8DS6Cyin3uQobyjW2cG95j7zPrEySpQg/exec";
+ 
+// Separate data stores — never mixed
+let ZHALL=[], ZSEAS=[], ZMVPS8=[], ZHOF=[], ZLSIG="", ZTAB="hall", ZFILT="all";
+ 
 const Z$=id=>document.getElementById(id);
 const Zcl=v=>String(v??"").trim();
 const Zkey=(r,a)=>{for(const n of a)if(r[n]!=null&&Zcl(r[n]))return r[n];return""};
 const Zhas=(p,k)=>Zcl(p[k]).length>0;
 const Zsrch=p=>Object.values(p).join(" ").toLowerCase();
-
+ 
 function Zstatus(txt,type){
-  const el=Z$("zsync");
-  el.innerHTML="";
+  const el=Z$("zsync");el.innerHTML="";
   const dot=document.createElement("div");dot.className="zbdot";
   const sp=document.createElement("span");sp.textContent=txt;
   el.appendChild(dot);el.appendChild(sp);
   el.className="zbadge"+(type?" z"+type:"");
 }
-
+ 
+// ── Normalizers (each only touches its own data) ────────────────────────────
+ 
 function ZnormHall(r){
   return{
-    name:Zcl(Zkey(r,["name","player","players","Player","Players","PLAYER","PLAYERS","Jogador","JOGADOR"])),
-    handle:Zcl(Zkey(r,["handle","user","discord","Handle","@","Discord","User"])),
-    top1:Zcl(Zkey(r,["top1","TOP1","TOP 1","Top 1","top 1"])),
-    top5:Zcl(Zkey(r,["top5","TOP5","TOP 5+","Top 5+","top 5+","TOP 5"])),
-    potw:Zcl(Zkey(r,["potw","POTW","Player of the Week","PLAYER OF THE WEEK"])),
-    series:Zcl(Zkey(r,["series","Series","Player of the Series","PLAYER OF THE SERIES"])),
-    mvps:Zcl(Zkey(r,["mvps","MVPs","MVPS","MVP"])),
+    name:     Zcl(Zkey(r,["name","player","players","Player","Players","PLAYER","PLAYERS","Jogador","JOGADOR"])),
+    handle:   Zcl(Zkey(r,["handle","user","discord","Handle","@","Discord","User"])),
+    top1:     Zcl(Zkey(r,["top1","TOP1","TOP 1","Top 1","top 1"])),
+    top5:     Zcl(Zkey(r,["top5","TOP5","TOP 5+","Top 5+","top 5+","TOP 5"])),
+    potw:     Zcl(Zkey(r,["potw","POTW","Player of the Week","PLAYER OF THE WEEK"])),
+    series:   Zcl(Zkey(r,["series","Series","Player of the Series","PLAYER OF THE SERIES"])),
+    mvps:     Zcl(Zkey(r,["mvps","MVPs","MVPS","MVP"])),
     champions:Zcl(Zkey(r,["champions","Champions","CHAMPIONS","Champion"])),
-    points:Number(Zkey(r,["points","Points","POINTS","Total","TOTAL"])||0)||0
+    points:   Number(Zkey(r,["points","Points","POINTS","Total","TOTAL"])||0)||0
   };
 }
 function ZnormSeas(r){
   return{
-    name:Zcl(Zkey(r,["name","player","players","Player","Players","PLAYER","PLAYERS","Jogador","JOGADOR"])),
+    name:  Zcl(Zkey(r,["name","player","players","Player","Players","PLAYER","PLAYERS","Jogador","JOGADOR"])),
     handle:Zcl(Zkey(r,["handle","user","discord","Handle","@","Discord","User"])),
-    top1:Zcl(Zkey(r,["top1","TOP1","TOP 1","Top 1","top 1"])),
-    top5:Zcl(Zkey(r,["top5","TOP5","TOP 5+","Top 5+","top 5+","TOP 5","Top 5"])),
+    top1:  Zcl(Zkey(r,["top1","TOP1","TOP 1","Top 1","top 1"])),
+    top5:  Zcl(Zkey(r,["top5","TOP5","TOP 5+","Top 5+","top 5+","TOP 5","Top 5"])),
     points:Number(Zkey(r,["points","Points","POINTS","Total","TOTAL","Pts","PTS"])||0)||0
   };
 }
-
-// ─── SEASON 8 normalizer — mapea los campos que ahora manda el doGet ───
 function ZnormMvpS8(r){
   return{
-    name:   Zcl(Zkey(r,["name","player","players","Player","Players","PLAYER","PLAYERS"])),
-    team:   Zcl(Zkey(r,["team","Team","TEAM"])),
-    top1:   Zcl(Zkey(r,["top1","TOP1","Top 1","top 1","TOP 1"])),
-    top5:   Zcl(Zkey(r,["top5","TOP5","Top 5","top 5","TOP 5","top+5","TOP+5"])),
-    potw:   Zcl(Zkey(r,["potw","POTW","Player of the Week","PLAYER OF THE WEEK"])),
-    mvps:   Zcl(Zkey(r,["mvps","MVPs","MVPS","mvp","MVP","awards","Awards"])),
-    points: Number(Zkey(r,["points","Points","POINTS","Total","TOTAL","Pts","PTS"])||0)||0
+    name:  Zcl(Zkey(r,["name","player","players","Player","Players","PLAYER","PLAYERS"])),
+    team:  Zcl(Zkey(r,["team","Team","TEAM"])),
+    top1:  Zcl(Zkey(r,["top1","TOP1","Top 1","top 1","TOP 1"])),
+    top5:  Zcl(Zkey(r,["top5","TOP5","Top 5","top 5","TOP 5","top+5","TOP+5"])),
+    potw:  Zcl(Zkey(r,["potw","POTW","Player of the Week","PLAYER OF THE WEEK"])),
+    mvps:  Zcl(Zkey(r,["mvps","MVPs","MVPS","mvp","MVP","awards","Awards"])),
+    points:Number(Zkey(r,["points","Points","POINTS","Total","TOTAL","Pts","PTS"])||0)||0
   };
 }
-
-function ZreadPayload(raw){
-  if(Array.isArray(raw))return{hall:raw,seasonal:[]};
+// Hall of Fame (Sheet 2) — only Player + Total Points
+function ZnormHof(r){
   return{
-    hall:raw.rankings||raw.hall||raw.hof||raw.players||raw.rows||raw.data||[],
-    seasonal:raw.seasonalRankings||raw.seasonal||[],
-    mvps8:raw.mvpsS8||raw.mvpS8||raw.mvps8||raw.mvp8||raw["Season 8"]||raw.s8Mvps||raw.s8MVPs||[]
+    name:  Zcl(Zkey(r,["name","player","players","Player","Players","PLAYER","PLAYERS"])),
+    points:Number(Zkey(r,["points","totalPoints","total_points","Total Points","Total","TOTAL","TotalPoints","Pts","PTS"])||0)||0
   };
 }
-
+ 
+// ── Payload reader — strictly separates the 3 sources ───────────────────────
+function ZreadPayload(raw){
+  if(Array.isArray(raw)) return{hall:raw, seasonal:[], mvps8:[], hof:[]};
+  return{
+    // Source 1: Sheet 1 Table "Rankings" (rows 2-114)
+    hall:     raw.rankings         || raw.hall       || raw.hof    || raw.players || raw.rows  || raw.data || [],
+    // Source 2: Sheet 1 Table "Seasonal" (rows 115+)
+    seasonal: raw.seasonalRankings || raw.seasonal   || [],
+    // Source 3: Season 8 (separate API)
+    mvps8:    raw.mvpsS8           || raw.mvpS8      || raw.mvps8  || raw.mvp8    || raw["Season 8"] || raw.s8Mvps || raw.s8MVPs || [],
+    // Source 4: Sheet 2 "Hall Of Fame"
+    hof:      raw.hallOfFame       || raw.hof_sheet2 || raw.hof2   || []
+  };
+}
+ 
 async function Zsync(){
   try{
     if(!ZAPI||ZAPI.includes("SEU_LINK")){Zstatus("ADD SHEET LINK","err");return}
     Zstatus("SYNCING");
-
-    const mainRes=await fetch(ZAPI,{method:"GET",cache:"no-store"});
-    if(!mainRes.ok)throw new Error("MAIN HTTP "+mainRes.status);
-    const mainText=await mainRes.text();
-
+ 
+    // Main sheet (Accolades + Seasonal + HOF from Sheet 2)
+    const mainRes  = await fetch(ZAPI,{method:"GET",cache:"no-store"});
+    if(!mainRes.ok) throw new Error("MAIN HTTP "+mainRes.status);
     let mainRaw;
-    try{mainRaw=JSON.parse(mainText)}catch{throw new Error("MAIN NOT JSON")}
-
-    const pl=ZreadPayload(mainRaw);
-    const hall=(pl.hall||[]).map(ZnormHall).filter(p=>p.name);
-    const seas=(pl.seasonal||[]).map(ZnormSeas).filter(p=>p.name);
-
+    try{mainRaw=JSON.parse(await mainRes.text())}catch{throw new Error("MAIN NOT JSON")}
+ 
+    const pl   = ZreadPayload(mainRaw);
+    const hall = (pl.hall    ||[]).map(ZnormHall).filter(p=>p.name);
+    const seas = (pl.seasonal||[]).map(ZnormSeas).filter(p=>p.name);
+    const hof  = (pl.hof     ||[]).map(ZnormHof ).filter(p=>p.name);
+ 
+    // Season 8 — separate endpoint
     let mvps8=[];
     if(ZAPI_SEASON8&&!ZAPI_SEASON8.includes("SEU_LINK")){
       try{
         const s8Res=await fetch(ZAPI_SEASON8,{method:"GET",cache:"no-store"});
-        if(!s8Res.ok)throw new Error("SEASON 8 HTTP "+s8Res.status);
-        const s8Text=await s8Res.text();
-
-        let s8Raw;
-        try{s8Raw=JSON.parse(s8Text)}catch{throw new Error("SEASON 8 NOT JSON")}
-
-        const s8Payload=ZreadPayload(s8Raw);
-        mvps8=(s8Payload.mvps8||[]).map(ZnormMvpS8).filter(p=>p.name);
-      }catch(s8Err){
-        console.error("Season 8 sheet error:",s8Err);
-        mvps8=[];
-      }
+        if(!s8Res.ok) throw new Error("S8 HTTP "+s8Res.status);
+        const s8Pl=ZreadPayload(JSON.parse(await s8Res.text()));
+        mvps8=(s8Pl.mvps8||[]).map(ZnormMvpS8).filter(p=>p.name);
+      }catch(e){console.error("S8 error:",e)}
     }
-
-    const sig=JSON.stringify({hall,seas,mvps8});
-    if(sig!==ZLSIG){ZHALL=hall;ZSEAS=seas;ZMVPS8=mvps8;ZLSIG=sig;ZrenderAll()}
+ 
+    const sig=JSON.stringify({hall,seas,mvps8,hof});
+    if(sig!==ZLSIG){ZHALL=hall;ZSEAS=seas;ZMVPS8=mvps8;ZHOF=hof;ZLSIG=sig;ZrenderAll()}
     Zstatus("LIVE DATA","live");
   }catch(err){
     console.error(err);Zstatus("SHEET ERROR","err");
-    if(!ZHALL.length&&!ZSEAS.length){
+    if(!ZHALL.length&&!ZSEAS.length&&!ZHOF.length){
       Z$("zpodium").innerHTML="";
       Z$("zhallTable").innerHTML='<div class="zempty">Could not load Google Sheet. Check Apps Script permissions.</div>';
       Z$("zseasTable").innerHTML='<div class="zempty">Could not load seasonal data.</div>';
       Z$("zmvps8Table").innerHTML='<div class="zempty">Could not load Season 8 data.</div>';
+      Z$("zhofTable").innerHTML='<div class="zempty">Could not load Hall of Fame data.</div>';
     }
   }
 }
-
+ 
+// ── Helpers ─────────────────────────────────────────────────────────────────
 function Zesc(v){return String(v??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;")}
-function ZqtyClass(txt){
-  const m=Zcl(txt).match(/(\d+)/);if(!m)return"";
-  const n=+m[1];if(n>=10)return"zq4";if(n>=5)return"zq3";if(n>=3)return"zq2";if(n>=1)return"zq1";return"";
-}
-
-// Detecta tipo de pill para colorearla
+function ZqtyClass(txt){const m=Zcl(txt).match(/(\d+)/);if(!m)return"";const n=+m[1];if(n>=10)return"zq4";if(n>=5)return"zq3";if(n>=3)return"zq2";if(n>=1)return"zq1";return""}
 function ZachClass(txt){
   const t=Zcl(txt).toLowerCase();const c=[];
-  // MOP / MDP / MVP
   if(/\bmop\b/i.test(txt))c.push("zpmop");
   else if(/\bmdp\b/i.test(txt))c.push("zpmdp");
   else if(/\bmvp\b/i.test(txt))c.push("zpmvp");
-  // POTW
   else if(/\bpotw\b/i.test(txt)||t.includes("player of the week"))c.push("zppotw");
-  // Seasons
   if(/\bs1\b/i.test(txt))c.push("zps1");
   else if(/\bs2\b/i.test(txt))c.push("zps2");
   else if(/\bs3\b/i.test(txt))c.push("zps3");
   else if(/\bs4\b/i.test(txt))c.push("zps4");
   else if(/\bs5\b/i.test(txt))c.push("zps5");
   else if(/\bs6\b/i.test(txt))c.push("zps6");
-  // Otros
   if(t.includes("league mvp"))c.push("zpleaguemvp");
   else if(t.includes("final mvp"))c.push("zpfinalmvp");
   else if(t.includes("semifinal mvp"))c.push("zpsemifinalmvp");
@@ -880,28 +570,34 @@ function ZchipHTML(txt,lbl){
   if(!items.length)return"";
   return items.map((item,i)=>`<span class="zpill ${ZachClass(item)}">${i===0&&lbl?`<small>${Zesc(lbl)}</small>`:""}${ZfmtAch(item)}</span>`).join("");
 }
-
+ 
+// ── Sort / filter ────────────────────────────────────────────────────────────
 function ZsortHall(){return[...ZHALL].sort((a,b)=>b.points-a.points||a.name.localeCompare(b.name))}
-function ZsortSeas(){return[...ZSEAS].sort((a,b)=>b.points-a.points||a.name.localeCompare(b.name))}
 function ZfiltHall(){
   const q=Z$("zsearch").value.toLowerCase().trim();
   let rows=ZHALL.filter(p=>!q||Zsrch(p).includes(q));
   if(ZFILT==="champion")rows=rows.filter(p=>Zhas(p,"champions"));
-  if(ZFILT==="mvp")rows=rows.filter(p=>Zhas(p,"mvps"));
-  if(ZFILT==="potw")rows=rows.filter(p=>Zhas(p,"potw"));
-  if(ZFILT==="series")rows=rows.filter(p=>Zhas(p,"series"));
+  if(ZFILT==="mvp")     rows=rows.filter(p=>Zhas(p,"mvps"));
+  if(ZFILT==="potw")    rows=rows.filter(p=>Zhas(p,"potw"));
+  if(ZFILT==="series")  rows=rows.filter(p=>Zhas(p,"series"));
   return rows.sort((a,b)=>b.points-a.points||a.name.localeCompare(b.name));
 }
 function ZfiltSeas(){
   const q=Z$("zsearch").value.toLowerCase().trim();
-  return ZsortSeas().filter(p=>!q||Zsrch(p).includes(q));
+  return[...ZSEAS].sort((a,b)=>b.points-a.points||a.name.localeCompare(b.name)).filter(p=>!q||Zsrch(p).includes(q));
 }
 function ZsortMvps8(){return[...ZMVPS8].sort((a,b)=>b.points-a.points||a.name.localeCompare(b.name))}
 function ZfiltMvps8(){
   const q=Z$("zsearch").value.toLowerCase().trim();
   return ZsortMvps8().filter(p=>!q||Zsrch(p).includes(q));
 }
-
+// HOF uses its own filtered set — never touches ZHALL/ZSEAS/ZMVPS8
+function ZfiltHof(){
+  const q=Z$("zsearch").value.toLowerCase().trim();
+  return[...ZHOF].sort((a,b)=>b.points-a.points||a.name.localeCompare(b.name)).filter(p=>!q||Zsrch(p).includes(q));
+}
+ 
+// ── SVG helpers ──────────────────────────────────────────────────────────────
 function ZcrownSVG(){
   return`<div class="zcrown-wrap"><svg class="zcrown-svg" viewBox="0 0 96 72" aria-hidden="true">
     <defs><linearGradient id="zcg" x1="0" x2="1" y1="0" y2="1">
@@ -914,16 +610,9 @@ function ZcrownSVG(){
     <circle cx="88" cy="19" r="5" fill="#fff9c4"/>
   </svg></div>`;
 }
-function ZhexSVG(label,fill,stroke,textFill,glow){
-  const txt=String(label);const fs=txt.length<=2?20:txt.length<=3?15:11;
-  return`<svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 10px ${glow})">
-    <polygon points="30,3.5 56.5,17.75 56.5,42.25 30,56.5 3.5,42.25 3.5,17.75" fill="${fill}" stroke="${stroke}" stroke-width="2.2"/>
-    <text x="30" y="30" text-anchor="middle" dy=".36em" font-family="Space Mono,monospace" font-size="${fs}" font-weight="800" fill="${textFill}">${txt}</text>
-  </svg>`;
-}
-function ZhexBlue(r){return`<div class="zrhex">${ZhexSVG("#"+r,"rgba(90,140,255,.12)","rgba(90,140,255,.5)","#8aaeff","rgba(90,140,255,.4)")}</div>`}
-function ZhexGold(r){return`<div class="zrhex">${ZhexSVG("#"+r,"rgba(255,213,56,.12)","rgba(255,213,56,.7)","#ffdf40","rgba(255,213,56,.6)")}</div>`}
-function ZhexPurp(r){return`<div class="zrhex">${ZhexSVG("#"+r,"rgba(123,79,255,.12)","rgba(123,79,255,.6)","#a57dff","rgba(123,79,255,.45)")}</div>`}
+function ZhexBlue(r){return`<div class="zrhex"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 10px rgba(90,140,255,.4))"><polygon points="30,3.5 56.5,17.75 56.5,42.25 30,56.5 3.5,42.25 3.5,17.75" fill="rgba(90,140,255,.12)" stroke="rgba(90,140,255,.5)" stroke-width="2.2"/><text x="30" y="30" text-anchor="middle" dy=".36em" font-family="Space Mono,monospace" font-size="${String(r).length<=2?20:15}" font-weight="800" fill="#8aaeff">#${r}</text></svg></div>`}
+function ZhexGold(r){return`<div class="zrhex"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 10px rgba(255,213,56,.6))"><polygon points="30,3.5 56.5,17.75 56.5,42.25 30,56.5 3.5,42.25 3.5,17.75" fill="rgba(255,213,56,.12)" stroke="rgba(255,213,56,.7)" stroke-width="2.2"/><text x="30" y="30" text-anchor="middle" dy=".36em" font-family="Space Mono,monospace" font-size="${String(r).length<=2?20:15}" font-weight="800" fill="#ffdf40">#${r}</text></svg></div>`}
+function ZhexPurp(r){return`<div class="zrhex"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 10px rgba(123,79,255,.45))"><polygon points="30,3.5 56.5,17.75 56.5,42.25 30,56.5 3.5,42.25 3.5,17.75" fill="rgba(123,79,255,.12)" stroke="rgba(123,79,255,.6)" stroke-width="2.2"/><text x="30" y="30" text-anchor="middle" dy=".36em" font-family="Space Mono,monospace" font-size="${String(r).length<=2?20:15}" font-weight="800" fill="#a57dff">#${r}</text></svg></div>`}
 function ZrowHex(n){
   const txt=String(n);const fs=txt.length<=2?20:txt.length<=3?15:11;
   let fill,stroke,textFill,glow;
@@ -936,7 +625,8 @@ function ZrowHex(n){
     <text x="30" y="30" text-anchor="middle" dy=".36em" font-family="Space Mono,monospace" font-size="${fs}" font-weight="800" fill="${textFill}">#${txt}</text>
   </svg>`;
 }
-
+ 
+// ── Render: Accolades (podium + table) ───────────────────────────────────────
 function ZrenderPodium(){
   const top=ZsortHall().slice(0,3);
   if(!top.length){Z$("zpodium").innerHTML="";return}
@@ -953,12 +643,11 @@ function ZrenderPodium(){
       <div class="zppills">${ZchipHTML(p.top1,"TOP 1")}${ZchipHTML(p.champions,"")}${ZchipHTML(p.mvps,"")}</div>
     </article>`).join("");
 }
-
 function ZrenderHall(){
   const base=ZsortHall();base.forEach((p,i)=>p._rank=i+1);
   const rows=ZfiltHall();
   const head=`<div class="zrow zrh"><span>Rank</span><span>Player</span><span>TOP 1</span><span>TOP 5+</span><span>MVPs</span><span>Champions</span><span>Points</span></div>`;
-  if(!ZHALL.length){Z$("zhallTable").innerHTML='<div class="zempty">No Hall of Fame data found.</div>';return}
+  if(!ZHALL.length){Z$("zhallTable").innerHTML='<div class="zempty">No Accolades data found.</div>';return}
   if(!rows.length){Z$("zhallTable").innerHTML=head+'<div class="zempty">No players match your search.</div>';return}
   Z$("zhallTable").innerHTML=head+rows.map(p=>`
     <div class="zrow">
@@ -971,7 +660,8 @@ function ZrenderHall(){
       <span class="zrtotal">${p.points}</span>
     </div>`).join("");
 }
-
+ 
+// ── Render: Seasonal Rankings ────────────────────────────────────────────────
 function ZrenderSeas(){
   const rows=ZfiltSeas();
   const head=`<div class="zrow zrs zrh"><span>Rank</span><span>Player</span><span>TOP 1</span><span>TOP 5</span><span>Points</span></div>`;
@@ -986,34 +676,17 @@ function ZrenderSeas(){
       <span class="zrtotal">${p.points}</span>
     </div>`).join("");
 }
-
-// ─── SEASON 8 render — 7 columnas: Rank | Player+Team | Top 1 | Top +5 | POTW | MVPs | Points ───
+ 
+// ── Render: MVP Season 8 ─────────────────────────────────────────────────────
 function ZrenderMvps8(){
   const rows=ZfiltMvps8();
-  const head=`<div class="zrow zmvp zrh">
-    <span>Rank</span>
-    <span>Player</span>
-    <span>Top 1</span>
-    <span>Top +5</span>
-    <span>POTW</span>
-    <span>MVPs</span>
-    <span>Points</span>
-  </div>`;
-  if(!ZMVPS8.length){
-    Z$("zmvps8Table").innerHTML='<div class="zempty">No Season 8 data found. Make sure the Apps Script returns the updated fields.</div>';
-    return;
-  }
-  if(!rows.length){
-    Z$("zmvps8Table").innerHTML=head+'<div class="zempty">No players match your search.</div>';
-    return;
-  }
+  const head=`<div class="zrow zmvp zrh"><span>Rank</span><span>Player</span><span>Top 1</span><span>Top +5</span><span>POTW</span><span>MVPs</span><span>Points</span></div>`;
+  if(!ZMVPS8.length){Z$("zmvps8Table").innerHTML='<div class="zempty">No Season 8 data found.</div>';return}
+  if(!rows.length){Z$("zmvps8Table").innerHTML=head+'<div class="zempty">No players match your search.</div>';return}
   Z$("zmvps8Table").innerHTML=head+rows.map((p,i)=>`
     <div class="zrow zmvp">
       <span class="zrrank">${ZrowHex(i+1)}</span>
-      <span class="zrplayer">
-        <b>${Zesc(p.name)}</b>
-        ${p.team?`<span class="zrteam">${Zesc(p.team)}</span>`:""}
-      </span>
+      <span class="zrplayer"><b>${Zesc(p.name)}</b>${p.team?`<span class="zrteam">${Zesc(p.team)}</span>`:""}</span>
       <span class="zrcell">${p.top1?ZpillsHTML(p.top1):'<span class="zpill znil">—</span>'}</span>
       <span class="zrcell">${p.top5?ZpillsHTML(p.top5):'<span class="zpill znil">—</span>'}</span>
       <span class="zrcell">${p.potw?ZpillsHTML(p.potw):'<span class="zpill znil">—</span>'}</span>
@@ -1021,25 +694,52 @@ function ZrenderMvps8(){
       <span class="zrtotal">${p.points}</span>
     </div>`).join("");
 }
-
+ 
+// ── Render: Hall of Fame (Sheet 2 — only name + points) ──────────────────────
+function ZrenderHof(){
+  const rows=ZfiltHof();
+  Z$("zhofCount").textContent=`${ZHOF.length} inductee${ZHOF.length!==1?"s":""}`;
+  const head=`<div class="zrow zhof zrh"><span>Rank</span><span>Player</span><span>Points</span></div>`;
+  if(!ZHOF.length){Z$("zhofTable").innerHTML='<div class="zempty">No Hall of Fame inductees yet.</div>';return}
+  if(!rows.length){Z$("zhofTable").innerHTML=head+'<div class="zempty">No players match your search.</div>';return}
+  Z$("zhofTable").innerHTML=head+rows.map((p,i)=>`
+    <div class="zrow zhof">
+      <span class="zrrank">${ZrowHex(i+1)}</span>
+      <span class="zrplayer"><b>${Zesc(p.name)}</b></span>
+      <span><span class="zrtotal">${p.points}</span></span>
+    </div>`).join("");
+}
+ 
+// ── Tab switching ─────────────────────────────────────────────────────────────
 function ZsetTab(tab){
   ZTAB=tab;
   document.querySelectorAll(".ztab").forEach(b=>b.classList.toggle("zact",b.dataset.tab===tab));
-  const hv=Z$("zhallView"),sv=Z$("zseasView"),mv=Z$("zmvps8View");
-  hv.classList.toggle("zhide",tab!=="hall");
-  sv.classList.toggle("zhide",tab!=="seasonal");
-  mv.classList.toggle("zhide",tab!=="mvps8");
-  const active=tab==="hall"?hv:(tab==="seasonal"?sv:mv);
+  const views={hall:Z$("zhallView"),seasonal:Z$("zseasView"),mvps8:Z$("zmvps8View"),hof:Z$("zhofView")};
+  Object.entries(views).forEach(([k,v])=>v.classList.toggle("zhide",k!==tab));
+  const active=views[tab];
   active.classList.add("zview-enter");setTimeout(()=>active.classList.remove("zview-enter"),400);
+  // Filter chips: only visible on Accolades tab
   Z$("zfilters").style.display=tab==="hall"?"":"none";
 }
-
+ 
+// ── Render all (completely separate datasets) ────────────────────────────────
 function ZrenderAll(){
-  const uniq=new Set([...ZHALL,...ZSEAS,...ZMVPS8].map(p=>p.name.toLowerCase().trim()));
+  // Count unique players across ALL datasets combined (for header badge)
+  const uniq=new Set([
+    ...ZHALL.map(p=>p.name.toLowerCase().trim()),
+    ...ZSEAS.map(p=>p.name.toLowerCase().trim()),
+    ...ZMVPS8.map(p=>p.name.toLowerCase().trim()),
+    ...ZHOF.map(p=>p.name.toLowerCase().trim()),
+  ]);
   Z$("ztotal").textContent=uniq.size;
-  ZrenderPodium();ZrenderHall();ZrenderSeas();ZrenderMvps8();
+  ZrenderPodium();
+  ZrenderHall();
+  ZrenderSeas();
+  ZrenderMvps8();
+  ZrenderHof();
 }
-
+ 
+// ── Events ───────────────────────────────────────────────────────────────────
 Z$("zsearch").addEventListener("input",ZrenderAll);
 document.querySelectorAll(".ztab").forEach(b=>b.addEventListener("click",()=>ZsetTab(b.dataset.tab)));
 document.querySelectorAll(".zfchip").forEach(b=>b.addEventListener("click",()=>{
@@ -1047,7 +747,7 @@ document.querySelectorAll(".zfchip").forEach(b=>b.addEventListener("click",()=>{
   document.querySelectorAll(".zfchip").forEach(c=>c.classList.toggle("zfact",c===b));
   ZrenderAll();
 }));
-
+ 
 ZsetTab("hall");
 Zsync();
 setInterval(Zsync,60000);
